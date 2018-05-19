@@ -82,7 +82,9 @@ var url = api + track + key;
 // var token = location.hash; 
 // console.log(window.accessToken);
 
-console.log("hi");
+var hashTest = location.hash;
+console.log(location.hash);
+console.log(hashTest);
 
 
 // // THIS IS THE GOOD GOOD QUERY ____________
