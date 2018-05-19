@@ -121,7 +121,7 @@ function download(content, fileName, contentType) {
 }
 
 $.ajax({
-	url: "https://api.spotify.com/v1/tracks/?ids=13x1YAL3c4msq6Q6HDq2FZ",
+	url: "https://api.spotify.com/v1/audio-features?ids=13x1YAL3c4msq6Q6HDq2FZ",
 	headers: {
        'Authorization': 'Bearer ' + token
    		},
@@ -143,7 +143,24 @@ $.ajax({
 
 
 
+// function download(content, fileName, contentType) {
+//     var a = document.createElement("a");
+//     var file = new Blob([content], {type: contentType});
+//     a.href = URL.createObjectURL(file);
+//     a.download = fileName;
+//     a.click();
+// }
 
+// $.ajax({
+// 	url: "https://api.spotify.com/v1/tracks/?ids=13x1YAL3c4msq6Q6HDq2FZ",
+// 	headers: {
+//        'Authorization': 'Bearer ' + token
+//    		},
+//    	success: function gotData(data) {
+//    		var songData = JSON.stringify(data)
+//    		download(songData, 'json.txt', 'text/plain');
+//    	}
+// });
 
 
 
