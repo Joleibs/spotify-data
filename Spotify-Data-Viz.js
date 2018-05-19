@@ -83,7 +83,10 @@ var url = api + track + key;
 // console.log(window.accessToken);
 
 var accessToken = location.hash;
-console.log(accessToken);
+// console.log(accessToken);
+
+var token = accessToken.substring(str.search("=")+1, accessToken.search("&"));
+console.log(token);
 
 
 // // THIS IS THE GOOD GOOD QUERY ____________
