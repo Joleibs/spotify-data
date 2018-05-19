@@ -82,7 +82,7 @@ var url = api + track + key;
 // var token = location.hash; 
 // console.log(window.accessToken);
 
-var accessToken = location.hash.access_token;
+var accessToken = location.hash;
 console.log(accessToken);
 
 
