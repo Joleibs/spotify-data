@@ -85,7 +85,7 @@ var url = api + track + key;
 var accessToken = location.hash;
 // console.log(accessToken);
 
-var token = accessToken.substring(str.search("=")+1, accessToken.search("&"));
+var token = accessToken.substring(accessToken.search("=")+1, accessToken.search("&"));
 console.log(token);
 
 
