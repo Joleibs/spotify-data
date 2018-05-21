@@ -17,12 +17,16 @@ function setup() {
   				var x = (windowWidth - width) / 2;
   				var y = (windowHeight - height) / 2;
   				cnv.position(x, y);
-  				background(0, 0, 0);
+  				background(255, 255, 255);
 			}
 
-function draw (rectLength, rectHeight) {
+function draw (songDataPass) {
 				rect(50, 50, rectLength, rectHeight); 
-        text(50,50, "Danceability:" + songData.audio_features[0].danceability*100)
+        text(50,50, "Danceability:" + songDataPass.audio_features.danceability);
+        text(50,80, "Acousticness:" + songDataPass.audio_features.acousticeness);
+        text(50,110, "Valence:" + songDataPass.audio_features.valance);
+        text(50,140, "Liveness:" + songDataPass.audio_features.acousticeness);
+        text(50,170, "Speechiness:" + songDataPass.audio_features.speechiness);
 			}
 
 //_________________user input code
@@ -37,7 +41,7 @@ function userInput () {
 var accessToken = location.hash;
 
 var token = accessToken.substring(accessToken.search("=")+1, accessToken.search("&"));
-console.log(token);
+console.log(token);a
 
 //_________________json code
 
@@ -51,33 +55,33 @@ function download(content, fileName, contentType) {
 
 //_________________api query + p5 draw
 
-$.ajax({
-	url: api + "?ids"+ user_uri,
-	headers: {
-       'Authorization': 'Bearer ' + token
-   		},
-   	success: function gotData(data) {
-   		var songData = JSON.stringify(data)
-   		// download(songData, 'json.txt', 'text/plain');
-   	}
-});
+// $.ajax({
+// 	url: api + "?ids"+ user_uri,
+// 	headers: {
+//        'Authorization': 'Bearer ' + token
+//    		},
+//    	success: function gotData(data) {
+//    		var songData = JSON.stringify(data)
+//    		// download(songData, 'json.txt', 'text/plain');
+//       draw (songData);
+//    	}
+// });
 
 // // Good good query ____________
-// $.ajax({
-//  url: api + "?ids"+ user_uri,
-//  headers: {
-//        'Authorization': 'Bearer ' + token
-//        },
-//      success: function gotData(data) {
-//        // var songData = JSON.stringify(data);
-//        var songData = data;
-//        // console.log (songData);
-//        // console.log (songData.audio_features[0].danceability);
-//        // download(songData, 'json.txt', 'text/plain');
-//          setup();
-//      draw (50, songData.audio_features[0].danceability*100);
-//      }
-// });
+$.ajax({
+ url: api + "?ids"+ user_uri,
+ headers: {
+       'Authorization': 'Bearer ' + token
+       },
+     success: function gotData(data) {
+      	//-----code for JSON Download..
+        // var songData = JSON.stringify(data);
+        // download(songData, 'json.txt', 'text/plain');
+      var songData = data;
+      setup();
+      draw (songData);
+     }
+});
 
 
 // function setup() {
