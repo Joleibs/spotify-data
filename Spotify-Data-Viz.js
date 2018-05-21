@@ -17,11 +17,12 @@ function setup() {
   				var x = (windowWidth - width) / 2;
   				var y = (windowHeight - height) / 2;
   				cnv.position(x, y);
-  				background(255, 0, 200);
+  				background(0, 0, 0);
 			}
 
 function draw (rectLength, rectHeight) {
 				rect(50, 50, rectLength, rectHeight); 
+        text(50,50, "Danceability:" + songData.audio_features[0].danceability*100)
 			}
 
 //_________________user input code
@@ -60,6 +61,23 @@ $.ajax({
    		// download(songData, 'json.txt', 'text/plain');
    	}
 });
+
+// // Good good query ____________
+// $.ajax({
+//  url: api + "?ids"+ user_uri,
+//  headers: {
+//        'Authorization': 'Bearer ' + token
+//        },
+//      success: function gotData(data) {
+//        // var songData = JSON.stringify(data);
+//        var songData = data;
+//        // console.log (songData);
+//        // console.log (songData.audio_features[0].danceability);
+//        // download(songData, 'json.txt', 'text/plain');
+//          setup();
+//      draw (50, songData.audio_features[0].danceability*100);
+//      }
+// });
 
 
 // function setup() {
