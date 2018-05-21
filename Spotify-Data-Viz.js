@@ -21,7 +21,7 @@ function setup() {
 			}
 
 function draw (songDataPass) {
-				rect(50, 50, rectLength, rectHeight); 
+				// rect(50, 50, rectLength, rectHeight); 
         text(50,50, "Danceability:" + songDataPass.audio_features.danceability);
         text(50,80, "Acousticness:" + songDataPass.audio_features.acousticeness);
         text(50,110, "Valence:" + songDataPass.audio_features.valance);
@@ -41,7 +41,7 @@ function userInput () {
 var accessToken = location.hash;
 
 var token = accessToken.substring(accessToken.search("=")+1, accessToken.search("&"));
-console.log(token);a
+console.log(token);
 
 //_________________json code
 
