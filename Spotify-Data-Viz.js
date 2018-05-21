@@ -28,7 +28,7 @@ function draw (rectLength, rectHeight) {
 
 function userInput () {
   var uri = document.getElementById("uri").value; 
-  console.log (uri);
+  console.log(uri);
 };
 
 //_________________token code
