@@ -59,6 +59,12 @@ function draw (rectLength, rectHeight) {
 				rect(50, 50, rectLength, rectHeight); 
 			}
 
+function userInput () {
+  var uri = document.getElementById("uri").value; 
+}
+userInput ();
+console.log (uri);
+
 // var clientId = "0bcef9d9b3314325932f6e8e1f4e70f2"
 // var clientSecret = "cefeb025fde0413495133cb917d47547"
 // var callback = "http://localhost:8888/callback/"
