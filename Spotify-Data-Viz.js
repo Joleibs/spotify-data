@@ -28,7 +28,7 @@ function draw (rectLength, rectHeight) {
 
 function userInput () {
   var user_uri = document.getElementById('uri').value; 
-  alert(user_uri);
+  console.log(user_uri);
 };
 
 //_________________token code
@@ -51,7 +51,7 @@ function download(content, fileName, contentType) {
 //_________________api query + p5 draw
 
 $.ajax({
-	url: api + "?ids=64XSkfOk3aOytSCHXaHsby",
+	url: api + "?ids"+ user_uri,
 	headers: {
        'Authorization': 'Bearer ' + token
    		},
