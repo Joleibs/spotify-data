@@ -27,10 +27,10 @@ function draw (rectLength, rectHeight) {
 //_________________user input code
 
 function userInput () {
-  return document.getElementById("uri").value; 
+  var uri = document.getElementById("uri").value; 
 };
 
-var uri = userInput ();
+userInput ();
 console.log (uri);
 
 //_________________token code
