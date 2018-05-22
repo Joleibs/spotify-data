@@ -13,10 +13,11 @@ var url = api + track + key;
 //_________________p5 setup code
 
 function setup() {
-  				var cnv = createCanvas(500, 500);
-  				var x = (windowWidth - width) / 2;
-  				var y = (windowHeight - height) / 2;
-  				cnv.position(x, y);
+  				// var cnv = 
+  				createCanvas(500, 500);
+  				// var x = (windowWidth - width) / 2;
+  				// var y = (windowHeight - height) / 2;
+  				// cnv.position(x, y);
   				background(255, 255, 255);
 			};
 
