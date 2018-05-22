@@ -20,10 +20,12 @@ function setup() {
   				background(255, 255, 255);
 			};
 
-function draw (dance) {
+function draw (dance, acoustic) {
 				// rect(50, 50, rectLength, rectHeight); 
 				text("Danceability:", 50, 50);
         text(dance, 120, 50);
+        text("Acoustiness:", 50, 80);
+        text(acoustic, 120, 80);
         // text('Acousticness:' + acoustic, 50, 80);
         // text('Valence:' + valence, 50, 110);
         // text('Liveness:' + liveness, 50, 140);
@@ -51,7 +53,7 @@ function visualize () {
       			// console.log(user_uri);
       			console.log(songData.audio_features[0].danceability);
       			setup();
-      			draw (songData.audio_features[0].danceability);
+      			draw (songData.audio_features[0].danceability, songData.audio_features[0].acoustiness);
 
      			}
 		});
