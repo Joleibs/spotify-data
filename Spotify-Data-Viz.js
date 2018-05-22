@@ -51,9 +51,9 @@ function visualize () {
       			var songData = data;
       			// console.log(songData);
       			// console.log(user_uri);
-      			console.log(songData.audio_features[0].danceability);
+      			// console.log(songData.audio_features[0].danceability);
       			setup();
-      			draw (songData.audio_features[0].danceability, songData.audio_features[0].acoustiness);
+      			draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness);
 
      			}
 		});
