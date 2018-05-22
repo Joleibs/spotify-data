@@ -39,7 +39,7 @@ function userInput () {
   console.log(user_uri);
 };
 
-var subButton = document.getElementById('subButton');
+var subButton = document.getElementById('btn1');
 subButton.addEventListener('click', userInput);
 
 
