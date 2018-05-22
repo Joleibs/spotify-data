@@ -79,7 +79,8 @@ $.ajax({
         // download(songData, 'json.txt', 'text/plain');
       // console.log(user_uri);
       	var songData = data;
-      	console.log(songData);
+      	// console.log(songData);
+      	console.log(songData.audio_features[0].danceability);
       	// setup();
       	draw (songData.audio_features[0].danceability, songData.audio_features[0].acoustiness, songData.audio_features[0].valence, songData.audio_features[0].liveness, songData.audio_features[0].speechiness);
      }
