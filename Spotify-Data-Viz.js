@@ -34,7 +34,6 @@ function draw (dance) {
 
 function userInput () {
   var user_uri = document.getElementById('uri').value; 
-  console.log(user_uri);
 };
 
 //_________________token code
