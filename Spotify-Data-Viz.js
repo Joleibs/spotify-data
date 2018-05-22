@@ -69,7 +69,7 @@ function download(content, fileName, contentType) {
 
 // // Good good query ____________
 $.ajax({
- // url: api + "?ids="+ user_uri,
+ url: api + "?ids=7sTmKNOcJrx8wAnbXuLim1",
  headers: {
        'Authorization': 'Bearer ' + token
        },
