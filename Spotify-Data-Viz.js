@@ -32,9 +32,13 @@ function draw (dance) {
 
 //_________________user input code
 
+var user_uri;
+
 function userInput () {
-  var user_uri = document.getElementById('uri').value; 
+  user_uri = document.getElementById('uri').value; 
 };
+
+console.log(user_uri);
 
 //_________________token code
 
