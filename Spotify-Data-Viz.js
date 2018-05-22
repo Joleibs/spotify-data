@@ -68,7 +68,6 @@ function visualize () {
       			// console.log(songData.audio_features[0].danceability);
       			setup();
       			draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness, songData.audio_features[0].energy, songData.audio_features[0].speechiness, songData.audio_features[0].liveness, songData.audio_features[0].valence, songData.audio_features[0].loudness, songData.audio_features[0].key, songData.audio_features[0].tempo);
-
      			}
 		});
 };
