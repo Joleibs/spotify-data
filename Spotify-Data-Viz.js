@@ -4,7 +4,7 @@ var clientId = "0bcef9d9b3314325932f6e8e1f4e70f2";
 var clientSecret = "cefeb025fde0413495133cb917d47547";
 var callback = "http://localhost:8888/callback/";
 
-var api = "https://api.spotify.com/v1/audio-features";
+var api = "https://api.spotify.com/v1/audio-features/";
 var track = "06AKEBrKUckW0KREUWRnvT";
 var key = "Authorization: Bearer BQBfB8oL5ndMo7tDdO9RLbyC_5C3U8xTnOpWsUlRjqVxrUrGsCfZfVd9ajpPqx1m924sZhM1mu5Kx0NQltNPPE5BBu-l96lePtVFt_ZpJVsST3T0_k4ajrzp9U3R7_QztnDnx0vSOA_6u3Q";
 
