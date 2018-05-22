@@ -22,7 +22,8 @@ function setup() {
 
 function draw (dance) {
 				// rect(50, 50, rectLength, rectHeight); 
-        text("Danceability:" + dance, 50, 50);
+        text("Danceability:", 50, 50);
+        text(dance, 70, 50);
         // text('Acousticness:' + acoustic, 50, 80);
         // text('Valence:' + valence, 50, 110);
         // text('Liveness:' + liveness, 50, 140);
