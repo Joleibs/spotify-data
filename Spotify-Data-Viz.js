@@ -70,7 +70,7 @@ function download(content, fileName, contentType) {
 
 // // Good good query ____________
 $.ajax({
- url: api + "?ids=7sTmKNOcJrx8wAnbXuLim1",
+ url: api + "?ids=" + user_uri,
  headers: {
        'Authorization': 'Bearer ' + token
        },
@@ -81,6 +81,7 @@ $.ajax({
       // console.log(user_uri);
       	var songData = data;
       	// console.log(songData);
+      	console.log(user_uri);
       	console.log(songData.audio_features[0].danceability);
       	// setup();
       	draw (songData.audio_features[0].danceability);
