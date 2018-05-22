@@ -77,7 +77,7 @@ $.ajax({
       	//-----code for JSON Download..
         // var songData = JSON.stringify(data);
         // download(songData, 'json.txt', 'text/plain');
-      console.log(user_uri);
+      // console.log(user_uri);
       var songData = data;
       console.log(songData);
       setup();
