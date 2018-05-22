@@ -17,7 +17,7 @@ function setup() {
   				var x = (windowWidth - width) / 2;
   				var y = (windowHeight - height) / 2;
   				cnv.position(x, y);
-  				background(255, 255, 255);
+  				background(200, 255, 255);
 			};
 
 function draw (dance, acoustic, energy, speech, live, valence, loud, key, tempo) {
