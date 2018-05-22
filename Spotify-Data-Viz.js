@@ -18,7 +18,7 @@ function setup() {
   				var y = (windowHeight - height) / 2;
   				cnv.position(x, y);
   				background(255, 255, 255);
-			}
+			};
 
 function draw (dance, acoustic, valence, liveness, speechiness) {
 				// rect(50, 50, rectLength, rectHeight); 
@@ -27,7 +27,7 @@ function draw (dance, acoustic, valence, liveness, speechiness) {
         text(50,110, "Valence:" + valence);
         text(50,140, "Liveness:" + liveness);
         text(50,170, "Speechiness:" + speechiness);
-			}
+			};
 
 //_________________user input code
 
@@ -51,7 +51,7 @@ function download(content, fileName, contentType) {
     a.href = URL.createObjectURL(file);
     a.download = fileName;
     a.click();
-}
+};
 
 //_________________api query + p5 draw
 
@@ -69,7 +69,7 @@ function download(content, fileName, contentType) {
 
 // // Good good query ____________
 $.ajax({
- url: api + "?ids="+ "7sTmKNOcJrx8wAnbXuLim1",
+ url: api + "?ids="+ user_uri,
  headers: {
        'Authorization': 'Bearer ' + token
        },
@@ -78,8 +78,9 @@ $.ajax({
         // var songData = JSON.stringify(data);
         // download(songData, 'json.txt', 'text/plain');
       var songData = data;
+      console.log(songData);
       setup();
-      draw (songData.audio_features[0].danceability, songData.audio_features[0].acoustiness, songData.audio_features[0].valence, songData.audio_features[0].liveness, songData.audio_features[0].speechiness);
+      draw (songData.audio_features.danceability, songData.audio_features.acoustiness, songData.audio_features.valence, songData.audio_features.liveness, songData.audio_features.speechiness);
      }
 });
 
