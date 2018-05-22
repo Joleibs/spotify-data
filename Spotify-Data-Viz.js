@@ -36,9 +36,12 @@ var user_uri;
 
 function userInput () {
   user_uri = document.getElementById('uri').value; 
+  console.log(user_uri);
 };
 
-console.log(user_uri);
+var subButton = document.getElementById('subButton');
+subButton.addEventListener('click', userInput);
+
 
 //_________________token code
 
@@ -84,10 +87,10 @@ $.ajax({
       // console.log(user_uri);
       	var songData = data;
       	// console.log(songData);
-      	console.log(user_uri);
-      	console.log(songData.audio_features[0].danceability);
+      	// console.log(user_uri);
+      	// console.log(songData.audio_features[0].danceability);
       	// setup();
-      	draw (songData.audio_features[0].danceability);
+      	// draw (songData.audio_features[0].danceability);
      }
 });
 
