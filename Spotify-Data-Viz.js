@@ -20,9 +20,9 @@ function setup() {
   				background(255, 255, 255);
 			};
 
-function draw (dance, acoustic, valence, liveness, speechiness) {
+function draw (dance) {
 				// rect(50, 50, rectLength, rectHeight); 
-        text(songData.audio_features[0].danceability, 50, 50);
+        text(dance, 50, 50);
         // text('Acousticness:' + acoustic, 50, 80);
         // text('Valence:' + valence, 50, 110);
         // text('Liveness:' + liveness, 50, 140);
@@ -82,7 +82,7 @@ $.ajax({
       	// console.log(songData);
       	console.log(songData.audio_features[0].danceability);
       	// setup();
-      	draw (songData.audio_features[0].danceability, songData.audio_features[0].acoustiness, songData.audio_features[0].valence, songData.audio_features[0].liveness, songData.audio_features[0].speechiness);
+      	draw (songData.audio_features[0].danceability);
      }
 });
 
