@@ -73,24 +73,24 @@ function download(content, fileName, contentType) {
 // });
 
 // // Good good query ____________
-$.ajax({
- url: api + "?ids=" + user_uri,
- headers: {
-       'Authorization': 'Bearer ' + token
-       },
-     success: function gotData(data) {
-      	//-----code for JSON Download..
-        // var songData = JSON.stringify(data);
-        // download(songData, 'json.txt', 'text/plain');
-      // console.log(user_uri);
-      	var songData = data;
+// $.ajax({
+//  url: api + "?ids=" + user_uri,
+//  headers: {
+//        'Authorization': 'Bearer ' + token
+//        },
+//      success: function gotData(data) {
+//       	//-----code for JSON Download..
+//         // var songData = JSON.stringify(data);
+//         // download(songData, 'json.txt', 'text/plain');
+//       // console.log(user_uri);
+//       	var songData = data;
       	// console.log(songData);
       	// console.log(user_uri);
       	// console.log(songData.audio_features[0].danceability);
       	// setup();
       	// draw (songData.audio_features[0].danceability);
-     }
-});
+//      }
+// });
 
 
 // function setup() {
