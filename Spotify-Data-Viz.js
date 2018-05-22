@@ -35,10 +35,11 @@ function draw (dance) {
 
 function userInput () {
   var user_uri = document.getElementById("my_uri").value; 
-  console.log(user_uri);
 };
 
 document.getElementById('btn1').addEventListener('click', userInput, false);
+
+console.log(user_uri);
 
 
 //_________________token code
@@ -46,7 +47,7 @@ document.getElementById('btn1').addEventListener('click', userInput, false);
 var accessToken = location.hash;
 
 var token = accessToken.substring(accessToken.search("=")+1, accessToken.search("&"));
-console.log(token);
+// console.log(token);
 
 //_________________json code
 
@@ -73,24 +74,25 @@ function download(content, fileName, contentType) {
 // });
 
 // // Good good query ____________
-// $.ajax({
-//  url: api + "?ids=" + user_uri,
-//  headers: {
-//        'Authorization': 'Bearer ' + token
-//        },
-//      success: function gotData(data) {
-//       	//-----code for JSON Download..
-//         // var songData = JSON.stringify(data);
-//         // download(songData, 'json.txt', 'text/plain');
-//       // console.log(user_uri);
-//       	var songData = data;
+$.ajax({
+ url: api + "?ids=" + user_uri,
+ headers: {
+       'Authorization': 'Bearer ' + token
+       },
+     success: function gotData(data) {
+      	//-----code for JSON Download..
+        // var songData = JSON.stringify(data);
+        // download(songData, 'json.txt', 'text/plain');
+      // console.log(user_uri);
+      	var songData = data;
       	// console.log(songData);
       	// console.log(user_uri);
-      	// console.log(songData.audio_features[0].danceability);
-      	// setup();
-      	// draw (songData.audio_features[0].danceability);
-//      }
-// });
+      	console.log(songData.audio_features[0].danceability);
+      	setup();
+      	draw (songData.audio_features[0].danceability);
+
+     }
+});
 
 
 // function setup() {
