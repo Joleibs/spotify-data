@@ -35,12 +35,12 @@ function draw (dance) {
 var user_uri;
 
 function userInput () {
-  user_uri = document.getElementById('uri').value; 
+  user_uri = document.getElementById('my_uri').value; 
   console.log(user_uri);
 };
 
 var subButton = document.getElementById('btn1');
-subButton.addEventListener('click', userInput);
+subButton.addEventListener('click', userInput, false);
 
 
 //_________________token code
