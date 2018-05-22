@@ -69,7 +69,7 @@ function download(content, fileName, contentType) {
 
 // // Good good query ____________
 $.ajax({
- url: api + "?ids="+ user_uri,
+ // url: api + "?ids="+ user_uri,
  headers: {
        'Authorization': 'Bearer ' + token
        },
@@ -77,6 +77,7 @@ $.ajax({
       	//-----code for JSON Download..
         // var songData = JSON.stringify(data);
         // download(songData, 'json.txt', 'text/plain');
+      console.log(user_uri);
       var songData = data;
       console.log(songData);
       setup();
