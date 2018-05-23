@@ -5,9 +5,9 @@ var clientSecret = "cefeb025fde0413495133cb917d47547";
 var callback = "http://localhost:8888/callback/";
 
 //features call
-// var api = "https://api.spotify.com/v1/audio-features/";
+var api = "https://api.spotify.com/v1/audio-features/";
 // track call
-var api = "https://api.spotify.com/v1/tracks/";
+// var api = "https://api.spotify.com/v1/tracks/";
 var track = "06AKEBrKUckW0KREUWRnvT";
 var key = "Authorization: Bearer BQBfB8oL5ndMo7tDdO9RLbyC_5C3U8xTnOpWsUlRjqVxrUrGsCfZfVd9ajpPqx1m924sZhM1mu5Kx0NQltNPPE5BBu-l96lePtVFt_ZpJVsST3T0_k4ajrzp9U3R7_QztnDnx0vSOA_6u3Q";
 
@@ -62,15 +62,15 @@ function visualize () {
        		},
      		success: function gotData(data) {
       			//-----code for JSON Download..
-        		var songData = JSON.stringify(data);
-        		download(songData, 'json.txt', 'text/plain');
+        		// var songData = JSON.stringify(data);
+        		// download(songData, 'json.txt', 'text/plain');
      			 // console.log(user_uri);
       			var songData = data;
       			// console.log(songData);
       			// console.log(user_uri);
       			// console.log(songData.audio_features[0].danceability);
-      			// setup();
-      			// draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness, songData.audio_features[0].energy, songData.audio_features[0].speechiness, songData.audio_features[0].liveness, songData.audio_features[0].valence, songData.audio_features[0].loudness, songData.audio_features[0].key, songData.audio_features[0].tempo);
+      			setup();
+      			draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness, songData.audio_features[0].energy, songData.audio_features[0].speechiness, songData.audio_features[0].liveness, songData.audio_features[0].valence, songData.audio_features[0].loudness, songData.audio_features[0].key, songData.audio_features[0].tempo);
      			}
 		});
 };
