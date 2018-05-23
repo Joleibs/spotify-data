@@ -59,15 +59,15 @@ function visualize () {
        		},
      		success: function gotData(data) {
       			//-----code for JSON Download..
-        		// var songData = JSON.stringify(data);
-        		// download(songData, 'json.txt', 'text/plain');
+        		var songData = JSON.stringify(data);
+        		download(songData, 'json.txt', 'text/plain');
      			 // console.log(user_uri);
       			var songData = data;
       			// console.log(songData);
       			// console.log(user_uri);
       			// console.log(songData.audio_features[0].danceability);
-      			setup();
-      			draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness, songData.audio_features[0].energy, songData.audio_features[0].speechiness, songData.audio_features[0].liveness, songData.audio_features[0].valence, songData.audio_features[0].loudness, songData.audio_features[0].key, songData.audio_features[0].tempo);
+      			// setup();
+      			// draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness, songData.audio_features[0].energy, songData.audio_features[0].speechiness, songData.audio_features[0].liveness, songData.audio_features[0].valence, songData.audio_features[0].loudness, songData.audio_features[0].key, songData.audio_features[0].tempo);
      			}
 		});
 };
