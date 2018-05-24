@@ -19,7 +19,11 @@ var donut = (function(one){
     .attr('height', height)
     .append('g')
     .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
-    
+   
+  var pie = d3.pie()
+   .sort(null)
+   .value(function(piedata) {return piedata.value;}); 
+
   d3.select('svg g').selectAll('arc').data(pie(piedata))
     .enter().append('g')
     .attr('class', 'slice');
