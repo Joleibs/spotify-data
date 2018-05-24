@@ -21,11 +21,12 @@ var donut = (function(one){
   var pie = d3.pie()
     .sort(null)
     .value(function(piedata) { return piedata.value; });
+
+  var slices1 = d3.selectAll('g.slice')
     
   d3.select('svg g').selectAll('arc').data(pie(piedata))
     .enter().append('g')
     .attr('class', 'slice')
-    var slices1 = d3.selectAll('g.slice')
     .append('path')
     .attr('fill', function(d, range) {
     return colors(range);
