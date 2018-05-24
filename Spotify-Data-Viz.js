@@ -15,13 +15,13 @@ var url = api + track + key;
 
 //_________________p5 setup code
 
-// function setup() {
-//   				var cnv = createCanvas(500, 500);
-//   				var x = (windowWidth - width) / 2;
-//   				var y = (windowHeight - height) / 2;
-//   				cnv.position(x, y);
-//   				background(200, 255, 255);
-// 			};
+function setup() {
+  				var cnv = createCanvas(500, 500);
+  				var x = (windowWidth - width) / 2;
+  				var y = (windowHeight - height) / 2;
+  				cnv.position(x, y);
+  				background(200, 255, 255);
+			};
 
 function draw (dance, acoustic, energy, speech, live, valence, loud, key, tempo) {
 				text("Danceability:", 50, 50);

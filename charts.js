@@ -8,7 +8,7 @@ var donut = (function(one){
   var greyColor = '#e8e8e8';
   var dataColor = '#1dafd3';
 
-  var colors = d3.scale.ordinal().range([greyColor, dataColor]);
+  colors = d3.scale.ordinal().range([greyColor, dataColor]);
 
     var piedata = [{
 
