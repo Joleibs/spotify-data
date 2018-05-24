@@ -50,6 +50,11 @@ function writeText (divId, divData) {
 		document.getElementById(divId).textContent = divData;  
 }
 
+//_________________token code
+
+var accessToken = location.hash;
+
+var token = accessToken.substring(accessToken.search("=")+1, accessToken.search("&"));
 
 //_________________FINAL FEATURES QUERY
 
@@ -87,14 +92,6 @@ function visualize () {
 
 document.getElementById('btn1').addEventListener('click', visualize, false);
 
-
-
-
-//_________________token code
-
-var accessToken = location.hash;
-
-var token = accessToken.substring(accessToken.search("=")+1, accessToken.search("&"));
 // console.log(token);
 
 //_________________json code
