@@ -89,7 +89,7 @@ function donutChart (data, color) {
         .attr('fill', function(d, range) {
            return colors(range)
         });
-  };
+  }
 };
 
 //______________ write text function
