@@ -46,7 +46,7 @@ var url = api + track + key;
 
 //_____________ Make donut chart function
 
-function donutChart (id, data, color) {
+function donutChart (chart, id, data, color) {
 
   	var donut = (function(one){ 
 		console.log("Hello");
@@ -60,7 +60,7 @@ function donutChart (id, data, color) {
 
 		var piedata = [{name: "one", value: data}, {name: "two", value: (1 - data)}];
 
-		var arc = d3.arc().innerRadius(radius - 50).outerRadius(radius);
+		var arc = d3.arc().innerRadius(radius - 50).outerRadius(radius);.attr('class', chart);
 
 		var donutChart = d3.select(id).append('svg')
 		  .attr('width', width)
@@ -72,10 +72,10 @@ function donutChart (id, data, color) {
 		  .sort(null)
 		  .value(function(piedata) { return piedata.value; });
 		  
-		var arc_g = d3.select('svg g').selectAll('arc').data(pie(piedata)).enter()
+		var arc_g = d3.select('svg g').selectAll(chart).data(pie(piedata)).enter()
 			.append('g')
 			.attr('class', 'slice');
-		console.log(arc)
+		console.log(arc.class)
 
 		arc_g.append('path').attr("d",arc)
 		.attr('fill', function(d, range) {
@@ -127,14 +127,14 @@ function visualize () {
 					writeText ("loudData", songData.audio_features[0].loudness); 
 					writeText ("tempoData", songData.audio_features[0].tempo); 
 
-					donutChart ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
-					donutChart ('#acousticDonut', songData.audio_features[0].acousticness, "#1dafd3"); 
-					donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
-          donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
-          donutChart ('#liveDonut', songData.audio_features[0].liveness, "#1dafd3"); 
-          donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
-          donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
-          donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
+					donutChart ('.one', '#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
+					donutChart ('.two', '#acousticDonut', songData.audio_features[0].acousticness, "#1dafd3"); 
+					// donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
+     //      donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
+     //      donutChart ('#liveDonut', songData.audio_features[0].liveness, "#1dafd3"); 
+     //      donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
+     //      donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
+     //      donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
      		}
 		});
 };
