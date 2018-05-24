@@ -10,15 +10,7 @@ var donut = (function(one){
 
   var colors = d3.scaleOrdinal([greyColor, dataColor]);
 
-    var piedata = [{
-
-      value: 50
- 
-    }, {
-
-      value: 30
- 
-    }]
+  var piedata = [{name: "one", value: 50}, {name: "two", value: 30}]
 
   var arc = d3.arc().innerRadius(radius - 100).outerRadius(radius);
 
