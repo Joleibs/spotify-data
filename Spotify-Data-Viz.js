@@ -49,9 +49,9 @@ var url = api + track + key;
 function donutChart (id, data, color) {
   var donut = (function(one){ 
   console.log("Hello");
-  var width = 200;
-  var height = 200;
-  var radius = 100;
+  var width = 400;
+  var height = 400;
+  var radius = 200;
   var greyColor = '#e8e8e8';
   var dataColor = '#1dafd3';
   var red
