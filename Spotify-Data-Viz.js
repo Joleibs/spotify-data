@@ -90,7 +90,7 @@ function donutChart (id, data, color) {
     	.transition()
       .ease(d3.easeLinear)
       .duration(2000)
-      .attrTween("d", tweenPie);
+      .attrTween("d", tweenDonut);
 
 	function tweenDonut(b) {
 	  b.innerRadius = 0;
