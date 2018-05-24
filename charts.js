@@ -1,4 +1,3 @@
-/* donut chart */
 var donut = (function(one){ 
   console.log("Hello");
   var width = 400;
