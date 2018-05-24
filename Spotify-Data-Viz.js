@@ -46,7 +46,7 @@ var url = api + track + key;
 
 //_____________ Make donut chart function
 
-function donutChart (x, id, data, color) {
+function donutChart (data, color) {
   var donut = (function(one){ 
   console.log("Hello");
   var width = 200;
@@ -56,27 +56,52 @@ function donutChart (x, id, data, color) {
   var dataColor = '#1dafd3';
   var red
   var colors = d3.scaleOrdinal([color, greyColor]);
-  var piedata = [{name: "one", value: data}, {name: "two", value: (1 - data)}];
+  var piedata = [{name: "one", value: 20}, {name: "two", value: 80}];
 
-  var arc = d3.arc().innerRadius(radius - 50).outerRadius(radius);
-  var donutChart = d3.select(id).append('svg')
-    .attr('width', width)
-    .attr('height', height)
-    .append('g')
-    .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
-  var pie = d3.pie()
+
+	// donut chart arc
+	var arc2 = d3.arc()
+    .outerRadius(radius)
+    .innerRadius(radius - 100);
+
+	// generate pie chart and donut chart
+	var pie = d3.pie()
     .sort(null)
-    .value(function(piedata) { return piedata.value; });
-    
-  var arc_gx = d3.select('svg g').selectAll('arc').data(pie(piedata))
-    .enter().append('g')
-    .attr('class', 'slice');
-  arc_g.append('path')
-    .attr("d",arc)
-    .attr('fill', function(d, range) {
-     return colors(range);
+    .value(function(d) { return d.count; });
+
+	// define the svg for pie chart
+	var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  	.append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+  // "g element is a container used to group other SVG elements"
+  var g = svg.selectAll(".arc")
+      .data(pie(piedata))
+    	.enter().append("g")
+      .attr("class", "arc");
+
+  // append path 
+  g.append("path")
+      .attr("d", arc)
+      .style("fill", function(d, range) {
+      return colors(range);
+  		}
+    	// transition 
+    	.transition()
+      .ease(d3.easeLinear)
+      .duration(2000)
+      .attrTween("d", tweenPie);
+
+	function tweenDonut(b) {
+	  b.innerRadius = 0;
+	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
+	  return function(t) { return arc2(i(t)); };
+	}
+  
   })
- })();
+}();
 };
 
 //______________ write text function
