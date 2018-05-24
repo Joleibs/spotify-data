@@ -48,32 +48,37 @@ var url = api + track + key;
 
 function donutChart (id, data, color) {
   var donut = (function(one){ 
-  console.log("Hello");
-  var width = 400;
-  var height = 400;
-  var radius = 200;
-  var greyColor = '#e8e8e8';
-  var dataColor = '#1dafd3';
-  var red
-  var colors = d3.scaleOrdinal([color, greyColor]);
-  var piedata = [{name: "one", value: data}, {name: "two", value: (1 - data)}];
-  var arc = d3.arc().innerRadius(radius - 50).outerRadius(radius);
-  var donutChart = d3.select(id).append('svg')
-    .attr('width', width)
-    .attr('height', height)
-    .append('g')
-    .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
-  var pie = d3.pie()
-    .sort(null)
-    .value(function(piedata) { return piedata.value; });
-    
-  var arc_g = d3.select('svg g').selectAll('arc').data(pie(piedata))
-    .enter().append('g')
-    .attr('class', 'slice');
-  arc_g.append('path')
-    .attr("d",arc)
-    .attr('fill', function(d, range) {
-     return colors(range);
+		console.log("Hello");
+		var width = 400;
+		var height = 400;
+		var radius = 200;
+		var greyColor = '#e8e8e8';
+		var dataColor = '#1dafd3';
+		var red
+		var colors = d3.scaleOrdinal([color, greyColor]);
+		
+		var piedata = [{name: "one", value: data}, {name: "two", value: (1 - data)}];
+
+		var arc = d3.arc().innerRadius(radius - 50).outerRadius(radius);
+
+		var donutChart = d3.select(id).append('svg')
+		  .attr('width', width)
+		  .attr('height', height)
+		  .append('g')
+		  .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
+
+		var pie = d3.pie()
+		  .sort(null)
+		  .value(function(piedata) { return piedata.value; });
+		  
+		var arc_g = d3.select('svg g').selectAll('arc').data(pie(piedata))
+		  .enter().append('g')
+		  .attr('class', 'slice');
+
+		arc_g.append('path')
+		  .attr("d",arc)
+		  .attr('fill', function(d, range) {
+		   return colors(range);
   })
  })();
 };
@@ -121,14 +126,14 @@ function visualize () {
 					writeText ("loudData", songData.audio_features[0].loudness); 
 					writeText ("tempoData", songData.audio_features[0].tempo); 
 
-					donutChart ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
+					// donutChart ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
 					donutChart ('#acousticDonut', songData.audio_features[0].acousticness, "#1dafd3"); 
-					donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
-          donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
-          donutChart ('#liveDonut', songData.audio_features[0].liveness, "#1dafd3"); 
-          donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
-          donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
-          donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
+					// donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
+     //      donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
+     //      donutChart ('#liveDonut', songData.audio_features[0].liveness, "#1dafd3"); 
+     //      donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
+     //      donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
+     //      donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
      		}
 		});
 };
