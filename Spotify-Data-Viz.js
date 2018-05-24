@@ -85,7 +85,7 @@ function donutChart (id, data, color) {
       .attr("d", arc)
       .style("fill", function(d, range) {
       return colors(range);
-  		}
+  		})
     	// transition 
     	.transition()
       .ease(d3.easeLinear)
