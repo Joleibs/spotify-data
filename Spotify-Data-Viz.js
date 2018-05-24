@@ -15,34 +15,41 @@ var url = api + track + key;
 
 //_________________p5 setup code
 
-function setup() {
-  				var cnv = createCanvas(500, 500);
-  				var x = (windowWidth - width) / 2;
-  				var y = (windowHeight - height) / 2;
-  				cnv.position(x, y);
-  				background(200, 255, 255);
-			};
+// function setup() {
+//   				var cnv = createCanvas(500, 500);
+//   				var x = (windowWidth - width) / 2;
+//   				var y = (windowHeight - height) / 2;
+//   				cnv.position(x, y);
+//   				background(200, 255, 255);
+// 			};
 
-function draw (dance, acoustic, energy, speech, live, valence, loud, key, tempo) {
-				text("Danceability:", 50, 50);
-        text(dance, 130, 50);
-        text("Acoustiness:", 50, 80);
-        text(acoustic, 130, 80);
-        text("Energy", 50, 110);
-        text(energy, 130, 110);
-        text("Speechiness:", 50, 140);
-        text(speech, 130, 140);
-        text("Liveness:", 50, 170);
-        text(live, 130, 170);
-        text("Valence:", 50, 200);
-        text(valence, 130, 200);
-        text("Loudness:", 50, 230);
-        text(loud, 130, 230);
-        text("Key:", 50, 260);
-        text(key, 130, 260);
-        text("Tempo:", 50, 290);
-        text(tempo, 130, 290);
-			};
+// function draw (dance, acoustic, energy, speech, live, valence, loud, key, tempo) {
+// 				text("Danceability:", 50, 50);
+//         text(dance, 130, 50);
+//         text("Acoustiness:", 50, 80);
+//         text(acoustic, 130, 80);
+//         text("Energy", 50, 110);
+//         text(energy, 130, 110);
+//         text("Speechiness:", 50, 140);
+//         text(speech, 130, 140);
+//         text("Liveness:", 50, 170);
+//         text(live, 130, 170);
+//         text("Valence:", 50, 200);
+//         text(valence, 130, 200);
+//         text("Loudness:", 50, 230);
+//         text(loud, 130, 230);
+//         text("Key:", 50, 260);
+//         text(key, 130, 260);
+//         text("Tempo:", 50, 290);
+//         text(tempo, 130, 290);
+// 			};
+
+//______________
+
+function writeText (divId, divData) {
+		document.getElementById(divId).textContent = divData;  
+}
+
 
 //_________________FINAL FEATURES QUERY
 
@@ -64,8 +71,16 @@ function visualize () {
       			// console.log(songData);
       			// console.log(user_uri);
       			// console.log(songData.audio_features[0].danceability);
-      			setup();
-      			draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness, songData.audio_features[0].energy, songData.audio_features[0].speechiness, songData.audio_features[0].liveness, songData.audio_features[0].valence, songData.audio_features[0].loudness, songData.audio_features[0].key, songData.audio_features[0].tempo);
+      			// setup();
+      			// draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness, songData.audio_features[0].energy, songData.audio_features[0].speechiness, songData.audio_features[0].liveness, songData.audio_features[0].valence, songData.audio_features[0].loudness, songData.audio_features[0].key, songData.audio_features[0].tempo);
+     			writeText ("danceData", songData.audio_features[0].danceability); 
+					writeText ("danceData", songData.audio_features[0].acousticness); 
+					writeText ("danceData", songData.audio_features[0].energy); 
+					writeText ("danceData", songData.audio_features[0].speechiness); 
+					writeText ("danceData", songData.audio_features[0].liveness); 
+					writeText ("danceData", songData.audio_features[0].valence); 
+					writeText ("danceData", songData.audio_features[0].loudness); 
+					writeText ("danceData", songData.audio_features[0].tempo); 
      			}
 		});
 };
