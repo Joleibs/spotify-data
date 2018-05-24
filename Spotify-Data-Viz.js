@@ -93,11 +93,9 @@ var g = donutChart.append('g')
         .attr("d",arc)
         .attr('fill', function(d, range) {
            return colors(range);
-        })
-  
+        }) 
   })
 }();
-};
 
 //______________ write text function
 
