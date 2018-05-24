@@ -46,7 +46,7 @@ var url = api + track + key;
 
 //_____________ Make donut chart function
 
-function donutChart (data, color) {
+function donutChart (id, data, color) {
   console.log("Hello");
   var width = 200;
   var height = 200;
