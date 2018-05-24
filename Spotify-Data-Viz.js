@@ -98,7 +98,7 @@ function visualize () {
   console.log(user_uri);
  		$.ajax({
  		url: api + "?ids=" + user_uri,
- 		headers: {v
+ 		headers: {
        		'Authorization': 'Bearer ' + token
        		},
      		success: function gotData(data) {
