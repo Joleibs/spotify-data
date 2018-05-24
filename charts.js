@@ -23,26 +23,16 @@ var donut = (function(one){
   var arc = d3.svg.arc().innerRadius(radius - 100).outerRadius(radius);
 
   var donutChart = d3.select('#danceDonut').append('svg')
- 
     .attr('width', width)
- 
     .attr('height', height)
- 
     .append('g')
- 
     .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')')
- 
     .selectAll('path').data(pie(piedata))
- 
     .enter().append('g')
- 
     .attr('class', 'slice')
     var slices1 = d3.selectAll('g.slice')
- 
     .append('path')
- 
     .attr('fill', function(d, range) {
- 
     return colors(range);
  
     })
