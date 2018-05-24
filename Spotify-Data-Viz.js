@@ -126,7 +126,7 @@ function visualize () {
 					writeText ("loudData", songData.audio_features[0].loudness); 
 					writeText ("tempoData", songData.audio_features[0].tempo); 
 
-					// donutChart ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
+					donutChart ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
 					donutChart ('#acousticDonut', songData.audio_features[0].acousticness, "#1dafd3"); 
 					// donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
      //      donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
