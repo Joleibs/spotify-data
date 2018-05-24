@@ -85,7 +85,7 @@ function visualize () {
 		});
 };
 
-// document.getElementById('btn1').addEventListener('click', visualize, false);
+document.getElementById('btn1').addEventListener('click', visualize, false);
 
 
 
