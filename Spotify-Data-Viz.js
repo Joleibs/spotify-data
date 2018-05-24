@@ -73,7 +73,7 @@ function donutChart (data, color) {
       .attr('width', width)
       .attr('height', height)
 
-var g = donutChart.append('g')
+	var g = donutChart.append('g')
       .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
 
     var pie = d3.pie()
@@ -93,9 +93,9 @@ var g = donutChart.append('g')
         .attr("d",arc)
         .attr('fill', function(d, range) {
            return colors(range);
-        }) 
-  })
-}();
+        };
+  }();
+();
 
 //______________ write text function
 
