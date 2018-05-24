@@ -68,7 +68,7 @@ function donutChart (id, data, color) {
     .value(function(d) { return d.count; });
 
 	// define the svg for pie chart
-	var svg = d3.select("body").append("svg")
+	var svg = d3.select(id).append("svg")
     .attr("width", width)
     .attr("height", height)
   	.append("g")
