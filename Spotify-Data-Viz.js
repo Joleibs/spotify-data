@@ -74,13 +74,13 @@ function visualize () {
       			// setup();
       			// draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness, songData.audio_features[0].energy, songData.audio_features[0].speechiness, songData.audio_features[0].liveness, songData.audio_features[0].valence, songData.audio_features[0].loudness, songData.audio_features[0].key, songData.audio_features[0].tempo);
      			writeText ("danceData", songData.audio_features[0].danceability); 
-					writeText ("danceData", songData.audio_features[0].acousticness); 
-					writeText ("danceData", songData.audio_features[0].energy); 
-					writeText ("danceData", songData.audio_features[0].speechiness); 
-					writeText ("danceData", songData.audio_features[0].liveness); 
-					writeText ("danceData", songData.audio_features[0].valence); 
-					writeText ("danceData", songData.audio_features[0].loudness); 
-					writeText ("danceData", songData.audio_features[0].tempo); 
+					writeText ("acousticData", songData.audio_features[0].acousticness); 
+					writeText ("energyData", songData.audio_features[0].energy); 
+					writeText ("speechData", songData.audio_features[0].speechiness); 
+					writeText ("liveData", songData.audio_features[0].liveness); 
+					writeText ("valenceData", songData.audio_features[0].valence); 
+					writeText ("loudData", songData.audio_features[0].loudness); 
+					writeText ("tempoData", songData.audio_features[0].tempo); 
      			}
 		});
 };
