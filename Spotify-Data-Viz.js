@@ -85,17 +85,12 @@ function donutChart (data, color) {
         .data(pie(piedata))
 
 //create new g and path elements on enter (ie if new), and then update d and color after a merge()
-    arc_g = arc_g.enter()
-        .append('g')
-        .attr('class', 'slice')
-        .append('path')
-        .merge(arc_g)
-        .attr("d",arc)
+    arc_g = arc_g.enter().append('g').attr('class', 'slice').append('path') .merge(arc_g).attr("d", arc)
         .attr('fill', function(d, range) {
            return colors(range);
         };
-  }();
-();
+  }; 
+};
 
 //______________ write text function
 
