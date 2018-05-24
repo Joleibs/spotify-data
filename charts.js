@@ -22,15 +22,14 @@ var donut = (function(one){
     .sort(null)
     .value(function(piedata) { return piedata.value; });
 
-  var slices1 = d3.selectAll('g.slice')
-    
-  d3.select('svg g').selectAll('arc').data(pie(piedata))
+donutChart.d3.select('svg g').selectAll('path').data(pie(piedata))
     .enter().append('g')
-    .attr('class', 'slice')
+    .attr('class', 'slice').
+    selectAll('.slice')
     .append('path')
     .attr('fill', function(d, range) {
     return colors(range);
      })
  
-      // .attr('d', arc)
+      .attr('d', arc)
 })();
