@@ -44,7 +44,41 @@ var url = api + track + key;
 //         text(tempo, 130, 290);
 // 			};
 
-//______________
+//_____________ Make donut chart function
+
+function donutChart (id, data, color) {
+  var donut = (function(one){ 
+  console.log("Hello");
+  var width = 400;
+  var height = 400;
+  var radius = 200;
+  var greyColor = '#e8e8e8';
+  var dataColor = '#1dafd3';
+  var red
+  var colors = d3.scaleOrdinal([color, greyColor]);
+  var piedata = [{name: "one", value: data}, {name: "two", value: (1 - data)}];
+  var arc = d3.arc().innerRadius(radius - 50).outerRadius(radius);
+  var donutChart = d3.select(id).append('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .append('g')
+    .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
+  var pie = d3.pie()
+    .sort(null)
+    .value(function(piedata) { return piedata.value; });
+    
+  var arc_g = d3.select('svg g').selectAll('arc').data(pie(piedata))
+    .enter().append('g')
+    .attr('class', 'slice');
+  arc_g.append('path')
+    .attr("d",arc)
+    .attr('fill', function(d, range) {
+     return colors(range);
+  })
+ })();
+};
+
+//______________ write text function
 
 function writeText (divId, divData) {
 		document.getElementById(divId).textContent = divData;  
@@ -64,7 +98,7 @@ function visualize () {
   console.log(user_uri);
  		$.ajax({
  		url: api + "?ids=" + user_uri,
- 		headers: {
+ 		headers: {v
        		'Authorization': 'Bearer ' + token
        		},
      		success: function gotData(data) {
@@ -86,6 +120,8 @@ function visualize () {
 					writeText ("valenceData", songData.audio_features[0].valence); 
 					writeText ("loudData", songData.audio_features[0].loudness); 
 					writeText ("tempoData", songData.audio_features[0].tempo); 
+
+					donutChart ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
      			}
 		});
 };

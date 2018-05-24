@@ -1,4 +1,5 @@
-var donut = (function(one){ 
+function donutChart () {
+  var donut = (function(one){ 
   console.log("Hello");
   var width = 400;
   var height = 400;
@@ -27,4 +28,5 @@ var donut = (function(one){
      return colors(range);
   })
  })();
+};
 
