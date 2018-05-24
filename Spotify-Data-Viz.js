@@ -47,7 +47,6 @@ var url = api + track + key;
 //_____________ Make donut chart function
 
 function donutChart (data, color) {
-  var donut = (function(one){ 
   console.log("Hello");
   var width = 200;
   var height = 200;
@@ -57,7 +56,6 @@ function donutChart (data, color) {
   var red
   var colors = d3.scaleOrdinal([color, greyColor]);
   var piedata = [{name: "one", value: 20}, {name: "two", value: 80}];
-
 
 	// donut chart arc
 	var arc2 = d3.arc()
@@ -89,7 +87,6 @@ function donutChart (data, color) {
         .attr('fill', function(d, range) {
            return colors(range)
         });
-  }
 };
 
 //______________ write text function
