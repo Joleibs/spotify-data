@@ -47,6 +47,7 @@ var url = api + track + key;
 //_____________ Make donut chart function
 
 function donutChart (id, data, color) {
+
   	var donut = (function(one){ 
 		console.log("Hello");
 		var width = 400;
@@ -71,13 +72,13 @@ function donutChart (id, data, color) {
 		  .sort(null)
 		  .value(function(piedata) { return piedata.value; });
 		  
-		var arc_g = d3.select('svg g').selectAll('arc').data(pie(piedata))
-		  .enter().append('g')
-		  .attr('class', 'slice');
+		var arc_g = d3.select('svg g').selectAll('arc').data(pie(piedata)).enter()
+			.append('g')
+			.attr('class', 'slice');
+		console.log(arc)
 
-		arc_g.append('path')
-		  .attr("d",arc)
-		  .attr('fill', function(d, range) {
+		arc_g.append('path').attr("d",arc)
+		.attr('fill', function(d, range) {
 		   return colors(range);
   })
  })();
