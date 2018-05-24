@@ -20,7 +20,7 @@ var donut = (function(one){
     .append('g')
     .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
     
-  d3.select('svg g').selectAll('path').data(pie(piedata))
+  d3.select('svg g').selectAll('arc').data(pie(piedata))
     .enter().append('g')
     .attr('class', 'slice');
     // var slices1 = d3.selectAll('g.slice')
