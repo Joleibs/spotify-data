@@ -26,17 +26,17 @@ var donut = (function(one){
     .attr('width', width)
     .attr('height', height)
     .append('g')
-    .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')')
-    .selectAll('path').data(pie(piedata))
+    .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
+    
+  donutChart.selectAll('path').data(pie(piedata))
     .enter().append('g')
     .attr('class', 'slice')
-    var slices1 = d3.selectAll('g.slice')
-    .append('path')
-    .attr('fill', function(d, range) {
-    return colors(range);
+    // var slices1 = d3.selectAll('g.slice')
+    // .append('path')
+    // .attr('fill', function(d, range) {
+    // return colors(range);
+    //  })
  
-    })
- 
-      .attr('d', arc)
+      // .attr('d', arc)
 })();
 
