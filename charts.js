@@ -7,7 +7,7 @@ var donut = (function(one){
   var dataColor = '#1dafd3';
   var red
   var colors = d3.scaleOrdinal([dataColor, greyColor]);
-  var piedata = [{name: "one", value: 20}, {name: "two", value: 130}];
+  var piedata = [{name: "one", value: 80}, {name: "two", value: 20}];
   var arc = d3.arc().innerRadius(radius - 50).outerRadius(radius);
   var donutChart = d3.select('#danceDonut').append('svg')
     .attr('width', width)
