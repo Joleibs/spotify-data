@@ -20,9 +20,9 @@ var donut = (function(one){
     .append('g')
     .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
     
-  donutChart.selectAll('path').data(pie(piedata))
+  d3.select('svg g').selectAll('path').data(pie(piedata))
     .enter().append('g')
-    .attr('class', 'slice')
+    .attr('class', 'slice');
     // var slices1 = d3.selectAll('g.slice')
     // .append('path')
     // .attr('fill', function(d, range) {
