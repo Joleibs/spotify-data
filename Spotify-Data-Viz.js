@@ -64,41 +64,36 @@ function donutChart (data, color) {
     .outerRadius(radius)
     .innerRadius(radius - 100);
 
-	// generate pie chart and donut chart
-	var pie = d3.pie()
-    .sort(null)
-    .value(function(d) { return d.count; });
+	//append the SVG on the first call, with a dummy data, and each subsequent call will use the existing element in the DOM
+	var donutChart = d3.select(id).selectAll('svg')
+      .data([null])
 
-	// define the svg for pie chart
-	var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-  	.append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+	donutChart = donutChart.enter().append('svg')
+      .merge(donutChart)
+      .attr('width', width)
+      .attr('height', height)
 
-  // "g element is a container used to group other SVG elements"
-  var g = svg.selectAll(".arc")
-      .data(pie(piedata))
-    	.enter().append("g")
-      .attr("class", "arc");
+var g = donutChart.append('g')
+      .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
 
-  // append path 
-  g.append("path")
-      .attr("d", arc)
-      .style("fill", function(d, range) {
-      return colors(range);
-  		}
-    	// transition 
-    	.transition()
-      .ease(d3.easeLinear)
-      .duration(2000)
-      .attrTween("d", tweenPie);
+    var pie = d3.pie()
+      .sort(null)
+      .value(function(piedata) { return piedata.value; });
 
-	function tweenDonut(b) {
-	  b.innerRadius = 0;
-	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
-	  return function(t) { return arc2(i(t)); };
-	}
+//selectAll on class '.slice'
+    var arc_g = g.selectAll('.slice')
+        .data(pie(piedata))
+
+//create new g and path elements on enter (ie if new), and then update d and color after a merge()
+    arc_g = arc_g.enter()
+        .append('g')
+        .attr('class', 'slice')
+        .append('path')
+        .merge(arc_g)
+        .attr("d",arc)
+        .attr('fill', function(d, range) {
+           return colors(range);
+        })
   
   })
 }();
