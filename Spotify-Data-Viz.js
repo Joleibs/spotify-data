@@ -49,9 +49,9 @@ var url = api + track + key;
 function donutChart (id, data, color) {
   var donut = (function(one){ 
   console.log("Hello");
-  var width = 400;
-  var height = 400;
-  var radius = 200;
+  var width = 200;
+  var height = 200;
+  var radius = 100;
   var greyColor = '#e8e8e8';
   var dataColor = '#1dafd3';
   var red
@@ -122,6 +122,14 @@ function visualize () {
 					writeText ("tempoData", songData.audio_features[0].tempo); 
 
 					donutChart ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
+					donutChart ('#acousticDonut', songData.audio_features[0].acousticness, "#1dafd3"); 
+					donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
+					donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
+					donutChart ('#liveDonut', songData.audio_features[0].liveness, "#1dafd3"); 
+					donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
+					donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
+					donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
+
      			}
 		});
 };
