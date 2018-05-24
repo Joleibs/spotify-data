@@ -66,12 +66,12 @@ function donutChart (data, color) {
 
 	//append the SVG on the first call, with a dummy data, and each subsequent call will use the existing element in the DOM
 	var donutChart = d3.select(id).selectAll('svg')
-      .data([null])
+      .data([null]);
 
 	donutChart = donutChart.enter().append('svg')
       .merge(donutChart)
       .attr('width', width)
-      .attr('height', height)
+      .attr('height', height);
 
 	var g = donutChart.append('g')
       .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
@@ -82,7 +82,7 @@ function donutChart (data, color) {
 
 //selectAll on class '.slice'
     var arc_g = g.selectAll('.slice')
-        .data(pie(piedata))
+        .data(pie(piedata));
 
 //create new g and path elements on enter (ie if new), and then update d and color after a merge()
     arc_g = arc_g.enter().append('g').attr('class', 'slice').append('path') .merge(arc_g).attr("d", arc)
