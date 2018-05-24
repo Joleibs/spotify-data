@@ -20,7 +20,7 @@ var donut = (function(one){
  
     }]
 
-  var arc = d3.svg.arc().innerRadius(radius - 100).outerRadius(radius);
+  var arc = d3.arc().innerRadius(radius - 100).outerRadius(radius);
 
   var donutChart = d3.select('#danceDonut').append('svg')
     .attr('width', width)
