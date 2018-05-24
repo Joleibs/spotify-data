@@ -88,9 +88,9 @@ function donutChart (data, color) {
     arc_g = arc_g.enter().append('g').attr('class', 'slice').append('path').merge(arc_g).attr("d", arc)
         .attr('fill', function(d, range) {
            return colors(range)
-        })
+        });
   }
-};
+}
 
 //______________ write text function
 
