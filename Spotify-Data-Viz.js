@@ -15,7 +15,7 @@ var url = api + track + key;
 
 //_____________ Make donut chart function
 
-function donutChart (id, data, color) {
+function donutChart (arcx, svgx, gx, a_donutx id, data, color) {
   console.log("Hello");
   var width = 400;
   var height = 400;
@@ -27,7 +27,7 @@ function donutChart (id, data, color) {
   var piedata = [{name: "one", value: 1 - data}, {name: "two", value: data}];
 
 	// donut chart arc
-	var arc = d3.arc()
+	var arcx = d3.arc()
     .outerRadius(radius - 10)
     .innerRadius(radius - 100);
 
@@ -37,21 +37,21 @@ function donutChart (id, data, color) {
     .value(function(d) { return d.value });
 
 	// define the svg for pie chart
-	var svg = d3.select(id).append("svg")
+	var svgx = d3.select(id).append("svg")
     .attr("width", width)
     .attr("height", height)
   	.append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
   // "g element is a container used to group other SVG elements"
-  var g = svg.selectAll(".arc")
+  var gx = svgx.selectAll(".arcx")
       .data(pie(piedata))
     	.enter().append("g")
-      .attr("class", "arc");
+      .attr("class", "arcx");
 
   // append path 
-  g.append("path")
-      .attr("d", arc)
+  gx.append("path")
+      .attr("d", arcx)
       .style("fill", function(d, range) {
       return colors(range);
   		})
@@ -59,12 +59,12 @@ function donutChart (id, data, color) {
     	.transition()
       .ease(d3.easeLinear)
       .duration(2000)
-      .attrTween("d", tweenDonut);
+      .attrTween("d", a_donutx);
 
-	function tweenDonut(b) {
+	function a_donutx(b) {
 	  b.innerRadius = 0;
 	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
-	  return function(t) { return arc(i(t)); };
+	  return function(t) { return arcx(i(t)); };
 	};
 };
 
@@ -109,7 +109,7 @@ function visualize () {
 					writeText ("loudData", songData.audio_features[0].loudness); 
 					writeText ("tempoData", songData.audio_features[0].tempo); 
 
-					donutChart ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
+					donutChart (arc1, svg1, g1, a_donut1,'#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
 					// donutChart ('#acousticDonut', songData.audio_features[0].acousticness, "#1dafd3"); 
 					// donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
 					// donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
