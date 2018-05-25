@@ -16,9 +16,9 @@ var url = api + track + key;
 //_____________ Make donut chart function
 
 function donutChart1 (id, data, color) {
-  var width = 400;
-	  var height = 400;
-	  var radius = 200;
+  var width = 200;
+	  var height = 200;
+	  var radius = 100;
 	  var greyColor = '#e8e8e8';
 	  var dataColor = color;
 	  var red
@@ -29,7 +29,7 @@ function donutChart1 (id, data, color) {
 	// donut chart arc
 	var arc1 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 100);
+    .innerRadius(radius - 50);
 
 	// generate pie chart and donut chart
 	var pie1 = d3.pie()
@@ -112,12 +112,65 @@ function donutChart2 (id, data, color) {
     	.transition()
       .ease(d3.easeLinear)
       .duration(2000)
-      .attrTween("d", tweenDonut1);
+      .attrTween("d", tweenDonut2);
 
-	function tweenDonut1(b) {
+	function tweenDonut2(b) {
 	  b.innerRadius = 0;
 	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
 	  return function(t) { return arc2(i(t)); };
+	};
+};
+
+function donutChart3 (id, data, color) {
+  var width = 400;
+	  var height = 400;
+	  var radius = 200;
+	  var greyColor = '#e8e8e8';
+	  var dataColor = color;
+	  var red
+	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
+	
+	var piedata3 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+
+	// donut chart arc
+	var arc3 = d3.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(radius - 100);
+
+	// generate pie chart and donut chart
+	var pie3 = d3.pie()
+    .sort(null)
+    .value(function(d) { return d.value });
+
+	// define the svg for pie chart
+	var svg3 = d3.select(id).append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  	.append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+  // "g element is a container used to group other SVG elements"
+  var g3 = svg3.selectAll(".arc2")
+      .data(pie3(piedata3))
+    	.enter().append("g")
+      .attr("class", "arc3");
+
+  // append path 
+  g2.append("path")
+      .attr("d", arc3)
+      .style("fill", function(d, range) {
+      return colors(range);
+  		})
+    	// transition 
+    	.transition()
+      .ease(d3.easeLinear)
+      .duration(2000)
+      .attrTween("d", tweenDonut3);
+
+	function tweenDonut3(b) {
+	  b.innerRadius = 0;
+	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
+	  return function(t) { return arc3(i(t)); };
 	};
 };
 
@@ -165,8 +218,8 @@ function visualize () {
 					writeText ("tempoData", songData.audio_features[0].tempo); 
 
 					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
-					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#ff0000"); 
-					// donutChart ('#acousticDonut', songData.audio_features[0].acousticness, "#1dafd3"); 
+					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, ("#ff0000")); 
+					donutChart3 ('#acousticDonut', songData.audio_features[0].acousticness, (0, 200, 0)); 
 					// donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
 					// donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
 					// donutChart ('#liveDonut', songData.audio_features[0].liveness, "#1dafd3"); 
