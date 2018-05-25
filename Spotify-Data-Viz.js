@@ -78,7 +78,7 @@ function donutChart2 (id, data, color) {
 	  var red
 	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
 	
-	var piedata2 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+	var piedata2 = [{name: "one", value: data}, {name: "two", value: 1 - data}];
 
 	// donut chart arc
 	var arc2 = d3.arc()
@@ -131,7 +131,7 @@ function donutChart3 (id, data, color) {
 	  var red
 	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
 	
-	var piedata3 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+	var piedata3 = [{name: "one", value: data}, {name: "two", value: 1 - data}];
 
 	// donut chart arc
 	var arc3 = d3.arc()
@@ -184,7 +184,7 @@ function donutChart4 (id, data, color) {
 	  var red
 	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
 	
-	var piedata4 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+	var piedata4 = [{name: "one", value: data}, {name: "two", value: 1 - data}];
 
 	// donut chart arc
 	var arc4 = d3.arc()
@@ -237,7 +237,7 @@ function donutChart5 (id, data, color) {
 	  var red
 	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
 	
-	var piedata5 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+	var piedata5 = [{name: "one", value: data}, {name: "two", value: 1 - data}];
 
 	// donut chart arc
 	var arc5 = d3.arc()
@@ -290,7 +290,7 @@ function donutChart6 (id, data, color) {
 	  var red
 	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
 	
-	var piedata6 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+	var piedata6 = [{name: "one", value: data}, {name: "two", value: 1 - data}];
 
 	// donut chart arc
 	var arc6 = d3.arc()
