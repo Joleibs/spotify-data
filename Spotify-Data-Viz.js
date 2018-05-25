@@ -15,43 +15,44 @@ var url = api + track + key;
 
 //_____________ Make donut chart function
 
-function donutChart (arcx, svgx, gx, a_donutx, id, data, color) {
-  console.log("Hello");
+function donutChart1 (id, data, color) {
+
   var width = 400;
-  var height = 400;
-  var radius = 200;
-  var greyColor = '#e8e8e8';
-  var dataColor = '#1dafd3';
-  var red
-  var colors = d3.scaleOrdinal([dataColor, greyColor]);
-  var piedata = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+	  var height = 400;
+	  var radius = 200;
+	  var greyColor = '#e8e8e8';
+	  var dataColor = '#1dafd3';
+	  var red
+	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
+	
+	var piedata1 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
 
 	// donut chart arc
-	var arcx = d3.arc()
+	var arc1 = d3.arc()
     .outerRadius(radius - 10)
     .innerRadius(radius - 100);
 
 	// generate pie chart and donut chart
-	var pie = d3.pie()
+	var pie1 = d3.pie()
     .sort(null)
     .value(function(d) { return d.value });
 
 	// define the svg for pie chart
-	var svgx = d3.select(id).append("svg")
+	var svg1 = d3.select(id).append("svg")
     .attr("width", width)
     .attr("height", height)
   	.append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
   // "g element is a container used to group other SVG elements"
-  var gx = svgx.selectAll(".arcx")
+  var g1 = svg1.selectAll(".arc1")
       .data(pie(piedata))
     	.enter().append("g")
-      .attr("class", "arcx");
+      .attr("class", "arc1");
 
   // append path 
-  gx.append("path")
-      .attr("d", arcx)
+  g1.append("path")
+      .attr("d", arc1)
       .style("fill", function(d, range) {
       return colors(range);
   		})
@@ -59,12 +60,12 @@ function donutChart (arcx, svgx, gx, a_donutx, id, data, color) {
     	.transition()
       .ease(d3.easeLinear)
       .duration(2000)
-      .attrTween("d", a_donutx);
+      .attrTween("d", tweenDonut1);
 
-	function a_donutx(b) {
+	function tweenDonut1(b) {
 	  b.innerRadius = 0;
 	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
-	  return function(t) { return arcx(i(t)); };
+	  return function(t) { return arc1(i(t)); };
 	};
 };
 
@@ -109,8 +110,7 @@ function visualize () {
 					writeText ("loudData", songData.audio_features[0].loudness); 
 					writeText ("tempoData", songData.audio_features[0].tempo); 
 
-					donutChart (arc1, svg1, g1, a_donut1,'#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
-					donutChart (arc2, svg2, g2, a_donut2,'#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
+					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
 					// donutChart ('#acousticDonut', songData.audio_features[0].acousticness, "#1dafd3"); 
 					// donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
 					// donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
