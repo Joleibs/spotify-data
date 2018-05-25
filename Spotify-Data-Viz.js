@@ -23,7 +23,7 @@ function donutChart (id, data, color) {
   var greyColor = '#e8e8e8';
   var dataColor = '#1dafd3';
   var red
-  var colors = d3.scaleOrdinal([color, greyColor]);
+  var colors = d3.scaleOrdinal([dataColor, greyColor]);
   var piedata = [{name: "one", value: 1 - data}, {name: "two", value: data}];
 
 	// donut chart arc
