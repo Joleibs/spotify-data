@@ -98,7 +98,7 @@ function donutChart2 (id, data, color) {
 
   // "g element is a container used to group other SVG elements"
   var g2 = svg2.selectAll(".arc2")
-      .data(pie1(piedata1))
+      .data(pie2(piedata2))
     	.enter().append("g")
       .attr("class", "arc2");
 
