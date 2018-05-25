@@ -82,7 +82,7 @@ function donutChart2 (id, data, color) {
 	// donut chart arc
 	var arc2 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 100);
+    .innerRadius(radius - 50);
 
 	// generate pie chart and donut chart
 	var pie2 = d3.pie()
@@ -135,7 +135,7 @@ function donutChart3 (id, data, color) {
 	// donut chart arc
 	var arc3 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 100);
+    .innerRadius(radius - 50);
 
 	// generate pie chart and donut chart
 	var pie3 = d3.pie()
@@ -171,6 +171,165 @@ function donutChart3 (id, data, color) {
 	  b.innerRadius = 0;
 	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
 	  return function(t) { return arc3(i(t)); };
+	};
+};
+
+function donutChart4 (id, data, color) {
+  var width = 200;
+	  var height = 200;
+	  var radius = 100;
+	  var greyColor = '#e8e8e8';
+	  var dataColor = color;
+	  var red
+	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
+	
+	var piedata4 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+
+	// donut chart arc
+	var arc4 = d3.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(radius - 50);
+
+	// generate pie chart and donut chart
+	var pie4 = d3.pie()
+    .sort(null)
+    .value(function(d) { return d.value });
+
+	// define the svg for pie chart
+	var svg4 = d3.select(id).append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  	.append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+  // "g element is a container used to group other SVG elements"
+  var g4 = svg4.selectAll(".arc4")
+      .data(pie3(piedata3))
+    	.enter().append("g")
+      .attr("class", "arc4");
+
+  // append path 
+  g4.append("path")
+      .attr("d", arc4)
+      .style("fill", function(d, range) {
+      return colors(range);
+  		})
+    	// transition 
+    	.transition()
+      .ease(d3.easeLinear)
+      .duration(2000)
+      .attrTween("d", tweenDonut3);
+
+	function tweenDonut4(b) {
+	  b.innerRadius = 0;
+	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
+	  return function(t) { return arc4(i(t)); };
+	};
+};
+
+function donutChart5 (id, data, color) {
+  var width = 200;
+	  var height = 200;
+	  var radius = 100;
+	  var greyColor = '#e8e8e8';
+	  var dataColor = color;
+	  var red
+	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
+	
+	var piedata5 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+
+	// donut chart arc
+	var arc5 = d3.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(radius - 50);
+
+	// generate pie chart and donut chart
+	var pie5 = d3.pie()
+    .sort(null)
+    .value(function(d) { return d.value });
+
+	// define the svg for pie chart
+	var svg5 = d3.select(id).append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  	.append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+  // "g element is a container used to group other SVG elements"
+  var g5 = svg5.selectAll(".arc5")
+      .data(pie3(piedata3))
+    	.enter().append("g")
+      .attr("class", "arc5");
+
+  // append path 
+  g5.append("path")
+      .attr("d", arc5)
+      .style("fill", function(d, range) {
+      return colors(range);
+  		})
+    	// transition 
+    	.transition()
+      .ease(d3.easeLinear)
+      .duration(2000)
+      .attrTween("d", tweenDonut3);
+
+	function tweenDonut5(b) {
+	  b.innerRadius = 0;
+	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
+	  return function(t) { return arc5(i(t)); };
+	};
+};
+
+function donutChart6 (id, data, color) {
+  var width = 200;
+	  var height = 200;
+	  var radius = 100;
+	  var greyColor = '#e8e8e8';
+	  var dataColor = color;
+	  var red
+	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
+	
+	var piedata6 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+
+	// donut chart arc
+	var arc6 = d3.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(radius - 50);
+
+	// generate pie chart and donut chart
+	var pie6 = d3.pie()
+    .sort(null)
+    .value(function(d) { return d.value });
+
+	// define the svg for pie chart
+	var svg6 = d3.select(id).append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  	.append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+  // "g element is a container used to group other SVG elements"
+  var g6 = svg6.selectAll(".arc2")
+      .data(pie6(piedata6))
+    	.enter().append("g")
+      .attr("class", "arc3");
+
+  // append path 
+  g6.append("path")
+      .attr("d", arc6)
+      .style("fill", function(d, range) {
+      return colors(range);
+  		})
+    	// transition 
+    	.transition()
+      .ease(d3.easeLinear)
+      .duration(2000)
+      .attrTween("d", tweenDonut3);
+
+	function tweenDonut6(b) {
+	  b.innerRadius = 0;
+	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
+	  return function(t) { return arc6(i(t)); };
 	};
 };
 
@@ -219,10 +378,10 @@ function visualize () {
 
 					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
 					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, ("#ff0000")); 
-					donutChart3 ('#acousticDonut', songData.audio_features[0].acousticness, (0, 200, 0)); 
-					// donutChart ('#energyDonut', songData.audio_features[0].energy, "#1dafd3"); 
-					// donutChart ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
-					// donutChart ('#liveDonut', songData.audio_features[0].liveness, "#1dafd3"); 
+					donutChart3 ('#energyDonut', songData.audio_features[0].energy, (0, 200, 0)); 
+					donutChart4 ('#energyDonut', songData.audio_features[0].speechiness, (0, 200, 0)); 
+					donutChart5 ('#speechDonut', songData.audio_features[0].liveness, (0, 200, 0)); 
+					donutChart6 ('#liveDonut', songData.audio_features[0].valence, (0, 200, 0)); 
 					// donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
 					// donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
 					// donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
