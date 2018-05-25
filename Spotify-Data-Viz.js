@@ -20,7 +20,7 @@ function donutChart1 (id, data, color) {
 	  var height = 400;
 	  var radius = 200;
 	  var greyColor = '#e8e8e8';
-	  var dataColor = '#1dafd3';
+	  var dataColor = color;
 	  var red
 	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
 	
@@ -73,7 +73,7 @@ function donutChart2 (id, data, color) {
 	  var height = 400;
 	  var radius = 200;
 	  var greyColor = '#e8e8e8';
-	  var dataColor = '#1dafd3';
+	  var dataColor = color;
 	  var red
 	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
 	
@@ -117,7 +117,7 @@ function donutChart2 (id, data, color) {
 	function tweenDonut1(b) {
 	  b.innerRadius = 0;
 	  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
-	  return function(t) { return arc1(i(t)); };
+	  return function(t) { return arc2(i(t)); };
 	};
 };
 
