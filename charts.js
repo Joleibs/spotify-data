@@ -1,3 +1,5 @@
+//OG function
+
 function donutChart () {
   var donut = (function(one){ 
   console.log("Hello");
@@ -15,7 +17,7 @@ function donutChart () {
     .attr('height', height)
     .append('g')
     .attr('transform', 'translate(' + (width - radius) + ',' + (height - radius) + ')');
-    
+
   var pie = d3.pie()
     .sort(null)
     .value(function(piedata) { return piedata.value; });

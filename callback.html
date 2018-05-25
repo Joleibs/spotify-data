@@ -11,44 +11,48 @@
   <script src="style.css"> </script> 
   <script src="jquery-3.3.1.min.js"></script>
   <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
 
   <h1> Enter a Spotify URI Code and receive it's data. </h1>
   <p> You can copy the URI code from any track on the Spotify App. <br> It will look like this -> spotify:track:3a1lNhkSLSkpJE4MSHpDu9. <br> Enter only the CODE after "track:". <br>Press visualize. </p>
 
-  <form id = "form">
-  	<input id ="my_uri" type="text"> </input>
-  	<button id = "btn1" type = "submit"> Visualize </button>
-  </form>
-  <div id="wrapper">
-	  <div id="danceData"></div>
-	  <div id="danceDonut"></div>
+	<form id = "form">
+		<input id ="my_uri" type="text"> </input>
+		<button id = "btn1" type = "submit"> Visualize </button>
+	</form>
+	<div id="dance" class = "donut">
+		<div id="danceData" class = "text"></div>
+		<div id="danceDonut"></div>
+	</div>
+	<div id="acoustic" class = "donut">
+		<div id="acousticData" class = "text"></div>
+		<div id="acousticDonut"></div>	
+	</div>
+	<div id="energy" class = "donut">
+		<div id="energyData" class = "text"></div>
+		<div id="energyDonut"></div>
+	</div>
+	<div id="speech" class = "donut">
+		<div id="speechData" class = "text"></div>
+		<div id="speechDonut"></div>
+	</div>
+	<div id="speech" class = "donut">
+		<div id = "liveData" class = "text"> </div>
+		<div id="liveDonut"></div>
+	</div>
+	<div id="valence" class = "donut">
+		<div id="valenceData" class = "text"></div>
+		<div id="valenceDonut"></div>
+	</div>
 
-	  <div id="acousticData"></div>
-	  <div id="acousticDonut"></div>	
-  
-	  <div id="energyData"></div>
-	  <div id="energyDonut"></div>
+	<div id="loudData"></div>
+	<div id="tempoData"></div>
+	<div id="keyData"></div>
 
-	  <div id="speechData"></div>
-	  <div id="speechDonut"></div>
-
-	  <div id="liveData"></div>
-	  <div id="liveDonut"></div>
-
-	  <div id="valenceData"></div>
-	  <div id="valenceDonut"></div>
-
-	  <div id="loudData"></div>
-
-	  <div id="tempoData"></div>
-
-	  <div id="keyData"></div>
-
-  </div>
-  <script class = "sketch" src="Spotify-Data-Viz.js"></script>
-  <!-- <script src="charts.js"></script> -->
+<script class = "sketch" src="Spotify-Data-Viz.js"></script>
+<!-- <script src="charts.js"></script> -->
 </body>
 
 

@@ -1,9 +1,9 @@
-/*html, body {
-  height: 100%;
+body {
+	font-color: white;
+	background-color: (200, 200, 200);
+	font-family: 'Montserrat', sans-serif;;
 }
 
-
-.sketch {
-	display: inline-block;
-	justify-content: center;
-}*/
+h1 {
+	margin: 0 auto;
+}
