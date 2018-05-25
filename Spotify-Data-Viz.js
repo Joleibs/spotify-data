@@ -219,7 +219,7 @@ function donutChart4 (id, data, color) {
     	.transition()
       .ease(d3.easeLinear)
       .duration(2000)
-      .attrTween("d", tweenDonut3);
+      .attrTween("d", tweenDonut4);
 
 	function tweenDonut4(b) {
 	  b.innerRadius = 0;
@@ -272,7 +272,7 @@ function donutChart5 (id, data, color) {
     	.transition()
       .ease(d3.easeLinear)
       .duration(2000)
-      .attrTween("d", tweenDonut3);
+      .attrTween("d", tweenDonut5);
 
 	function tweenDonut5(b) {
 	  b.innerRadius = 0;
@@ -325,7 +325,7 @@ function donutChart6 (id, data, color) {
     	.transition()
       .ease(d3.easeLinear)
       .duration(2000)
-      .attrTween("d", tweenDonut3);
+      .attrTween("d", tweenDonut6);
 
 	function tweenDonut6(b) {
 	  b.innerRadius = 0;
@@ -381,9 +381,9 @@ function visualize () {
 					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
 					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, ("#ff0000")); 
 					donutChart3 ('#energyDonut', songData.audio_features[0].energy, (0, 200, 0)); 
-					donutChart4 ('#energyDonut', songData.audio_features[0].speechiness, (0, 200, 0)); 
-					donutChart5 ('#speechDonut', songData.audio_features[0].liveness, (0, 200, 0)); 
-					donutChart6 ('#liveDonut', songData.audio_features[0].valence, (0, 200, 0)); 
+					donutChart4 ('#speechDonut', songData.audio_features[0].speechiness, (0, 200, 0)); 
+					donutChart5 ('#liveDonut', songData.audio_features[0].liveness, (0, 200, 0)); 
+					donutChart6 ('#valenceDonut', songData.audio_features[0].valence, (0, 200, 0)); 
 					// donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
 					// donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
 					// donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
