@@ -1,11 +1,13 @@
 body {
 	font-color: white;
-	background-color: (200, 200, 200);
+	background-color: rgb(200, 200, 200);
 	font-family: 'Montserrat', sans-serif;
+	text-align: center;
 }
 
 h1 {
 	margin: 0 auto;
+
 }
 
 .text {
