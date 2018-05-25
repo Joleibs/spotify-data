@@ -104,7 +104,7 @@ function donutChart2 (id, data, color) {
 
   // append path 
   g2.append("path")
-      .attr("d", arc1)
+      .attr("d", arc2)
       .style("fill", function(d, range) {
       return colors(range);
   		})
