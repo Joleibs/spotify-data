@@ -34,7 +34,7 @@ function donutChart (id, data, color) {
 	// generate pie chart and donut chart
 	var pie = d3.pie()
     .sort(null)
-    .value(function(d) { return d.count; });
+    .value(function(d) { return d.value });
 
 	// define the svg for pie chart
 	var svg = d3.select(id).append("svg")
