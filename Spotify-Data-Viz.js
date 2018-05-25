@@ -13,37 +13,6 @@ var key = "Authorization: Bearer BQBfB8oL5ndMo7tDdO9RLbyC_5C3U8xTnOpWsUlRjqVxrUr
 
 var url = api + track + key;
 
-//_________________p5 setup code
-
-// function setup() {
-//   				var cnv = createCanvas(500, 500);
-//   				var x = (windowWidth - width) / 2;
-//   				var y = (windowHeight - height) / 2;
-//   				cnv.position(x, y);
-//   				background(200, 255, 255);
-// 			};
-
-// function draw (dance, acoustic, energy, speech, live, valence, loud, key, tempo) {
-// 				text("Danceability:", 50, 50);
-//         text(dance, 130, 50);
-//         text("Acoustiness:", 50, 80);
-//         text(acoustic, 130, 80);
-//         text("Energy", 50, 110);
-//         text(energy, 130, 110);
-//         text("Speechiness:", 50, 140);
-//         text(speech, 130, 140);
-//         text("Liveness:", 50, 170);
-//         text(live, 130, 170);
-//         text("Valence:", 50, 200);
-//         text(valence, 130, 200);
-//         text("Loudness:", 50, 230);
-//         text(loud, 130, 230);
-//         text("Key:", 50, 260);
-//         text(key, 130, 260);
-//         text("Tempo:", 50, 290);
-//         text(tempo, 130, 290);
-// 			};
-
 //_____________ Make donut chart function
 
 function donutChart (id, data, color) {
@@ -111,8 +80,7 @@ var accessToken = location.hash;
 
 var token = accessToken.substring(accessToken.search("=")+1, accessToken.search("&"));
 
-//_________________FINAL FEATURES QUERY
-
+//_________________FEATURES QUERY
 
 function visualize () {
   var user_uri = document.getElementById("my_uri").value; 
@@ -123,16 +91,15 @@ function visualize () {
        		'Authorization': 'Bearer ' + token
        		},
      		success: function gotData(data) {
-      			//-----code for JSON Download..
+
+      			//----- internal code for JSON Download..
         		// var songData = JSON.stringify(data);
         		// download(songData, 'json.txt', 'text/plain');
-     			 // console.log(user_uri);
+
+    
       			var songData = data;
       			console.log(songData);
-      			// console.log(user_uri);
-      			// console.log(songData.audio_features[0].danceability);
-      			// setup();
-      			// draw (songData.audio_features[0].danceability, songData.audio_features[0].acousticness, songData.audio_features[0].energy, songData.audio_features[0].speechiness, songData.audio_features[0].liveness, songData.audio_features[0].valence, songData.audio_features[0].loudness, songData.audio_features[0].key, songData.audio_features[0].tempo);
+      		
      			writeText ("danceData", songData.audio_features[0].danceability); 
 					writeText ("acousticData", songData.audio_features[0].acousticness); 
 					writeText ("energyData", songData.audio_features[0].energy); 
@@ -169,35 +136,7 @@ function download(content, fileName, contentType) {
     a.click();
 };
 
-//_________________api query + p5 draw
-
-// $.ajax({
-// 	url: api + "?ids"+ user_uri,
-// 	headers: {
-//        'Authorization': 'Bearer ' + token
-//    		},
-//    	success: function gotData(data) {
-//    		var songData = JSON.stringify(data)
-//    		// download(songData, 'json.txt', 'text/plain');
-//       draw (songData);
-//    	}
-// });
-
-// // Good good query ____________
-
-
-
-
-// function setup() {
-//   createCanvas(100, 100);
-//   background(255, 0, 200);
-// }
-
-// function draw () {
-// 	rect(50, 50, (songData.audio_features[0].danceability*100), 20); 
-// }
-
-
+//__________ Download JSON Function
 
 // function download(content, fileName, contentType) {
 //     var a = document.createElement("a");
