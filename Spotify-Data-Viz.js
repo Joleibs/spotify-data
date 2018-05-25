@@ -12,6 +12,7 @@ var track = "06AKEBrKUckW0KREUWRnvT";
 var key = "Authorization: Bearer BQBfB8oL5ndMo7tDdO9RLbyC_5C3U8xTnOpWsUlRjqVxrUrGsCfZfVd9ajpPqx1m924sZhM1mu5Kx0NQltNPPE5BBu-l96lePtVFt_ZpJVsST3T0_k4ajrzp9U3R7_QztnDnx0vSOA_6u3Q";
 
 var url = api + track + key;
+var harRun = 0;
 
 //_____________ Make donut chart function
 
@@ -204,7 +205,7 @@ function donutChart4 (id, data, color) {
 
   // "g element is a container used to group other SVG elements"
   var g4 = svg4.selectAll(".arc4")
-      .data(pie3(piedata3))
+      .data(pie4(piedata4))
     	.enter().append("g")
       .attr("class", "arc4");
 
@@ -257,7 +258,7 @@ function donutChart5 (id, data, color) {
 
   // "g element is a container used to group other SVG elements"
   var g5 = svg5.selectAll(".arc5")
-      .data(pie3(piedata3))
+      .data(pie5(piedata5))
     	.enter().append("g")
       .attr("class", "arc5");
 
@@ -365,6 +366,7 @@ function visualize () {
 
     
       			var songData = data;
+      			var hasRun = 1;
       			console.log(songData);
       		
      			writeText ("danceData", songData.audio_features[0].danceability); 
@@ -391,6 +393,8 @@ function visualize () {
 };
 
 document.getElementById('btn1').addEventListener('click', visualize, false);
+
+// if(hasRun = 0) {visualize};
 
 // console.log(token);
 
