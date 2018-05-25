@@ -69,9 +69,9 @@ function donutChart1 (id, data, color) {
 };
 
 function donutChart2 (id, data, color) {
-  var width = 400;
-	  var height = 400;
-	  var radius = 200;
+  var width = 200;
+	  var height = 200;
+	  var radius = 100;
 	  var greyColor = '#e8e8e8';
 	  var dataColor = color;
 	  var red
@@ -122,9 +122,9 @@ function donutChart2 (id, data, color) {
 };
 
 function donutChart3 (id, data, color) {
-  var width = 400;
-	  var height = 400;
-	  var radius = 200;
+  var width = 200;
+	  var height = 200;
+	  var radius = 100;
 	  var greyColor = '#e8e8e8';
 	  var dataColor = color;
 	  var red
@@ -156,7 +156,7 @@ function donutChart3 (id, data, color) {
       .attr("class", "arc3");
 
   // append path 
-  g2.append("path")
+  g3.append("path")
       .attr("d", arc3)
       .style("fill", function(d, range) {
       return colors(range);
