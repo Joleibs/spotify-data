@@ -15,7 +15,7 @@ var url = api + track + key;
 
 //_____________ Make donut chart function
 
-function donutChart (arcx, svgx, gx, a_donutx id, data, color) {
+function donutChart (arcx, svgx, gx, a_donutx, id, data, color) {
   console.log("Hello");
   var width = 400;
   var height = 400;
