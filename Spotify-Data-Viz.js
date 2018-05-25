@@ -23,9 +23,9 @@ function donutChart1 (id, data, color) {
 	  var greyColor = '#e8e8e8';
 	  var dataColor = color;
 	  var red
-	  var colors = d3.scaleOrdinal([dataColor, greyColor]);
+	  var colors = d3.scaleOrdinal([greyColor, dataColor]);
 	
-	var piedata1 = [{name: "one", value: 1 - data}, {name: "two", value: data}];
+	var piedata1 = [{name: "one", value: data}, {name: "two", value: 1 - data}];
 
 	// donut chart arc
 	var arc1 = d3.arc()
@@ -379,11 +379,11 @@ function visualize () {
 					writeText ("tempoData", songData.audio_features[0].tempo); 
 
 					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
-					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, ("#ff0000")); 
-					donutChart3 ('#energyDonut', songData.audio_features[0].energy, (0, 200, 0)); 
-					donutChart4 ('#speechDonut', songData.audio_features[0].speechiness, (0, 200, 0)); 
-					donutChart5 ('#liveDonut', songData.audio_features[0].liveness, (0, 200, 0)); 
-					donutChart6 ('#valenceDonut', songData.audio_features[0].valence, (0, 200, 0)); 
+					// donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#ff0000"); 
+					// donutChart3 ('#energyDonut', songData.audio_features[0].energy, "#00FF00"); 
+					// donutChart4 ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
+					// donutChart5 ('#liveDonut', songData.audio_features[0].liveness, "#ff0000"); 
+					// donutChart6 ('#valenceDonut', songData.audio_features[0].valence, "#00FF00"); 
 					// donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
 					// donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
 					// donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
