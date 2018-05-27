@@ -46,6 +46,7 @@ h1 {
 	display: block;
 	margin: 0 auto;
 	margin-top: 20px;
+	margin: 40px;
 }
 
 #my_uri {
@@ -57,7 +58,6 @@ h1 {
 
 .footer {
 	font-size: 12px;
-    left: 0;
     bottom: 0;
     width: 100%;
     color: white;
@@ -67,6 +67,10 @@ h1 {
 
 .text {
 	font-size: 12px;
+}
+
+.charts {
+	width: 600px;
 }
 
 .donut {
