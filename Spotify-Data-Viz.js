@@ -340,7 +340,7 @@ function donutChart6 (id, data, color) {
 
 function writeText (divId, divData) {
 		document.getElementById(divId).textContent = divData;  
-}
+};
 
 //_________________token code
 
