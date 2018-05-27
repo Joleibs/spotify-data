@@ -34,3 +34,7 @@ p {
 .text {
 	font-size: 12px;
 }
+
+.donut {
+	float: center;
+}
