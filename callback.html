@@ -21,14 +21,15 @@
 	</header>
 
 	<form id = "form">
-		<input id="my_uri" type="text"> </input>
-		<button id ="btn1" type="submit"> Visualize </button>
+		<input id ="my_uri" type="text"> </input>
+		<button id = "btn1" type = "submit"> Visualize </button>
 	</form>
 
 	<div class="top3">
-		<div class="pa"> </div>
-		<div class="pa"></div>
-		<div class="pa"></div>
+		<div class="pa" id="loudData"> </div>
+		<div class="pa" id="tempoData"></div>
+		<div id="keyData"></div>
+
 	</div>
 
 	<div class="charts">
@@ -50,11 +51,6 @@
 		<div id="speech" class = "donut">
 			<div id="speechData" class = "text"></div>
 			<div id="speechDonut"></div>
-		</div>
-
-		<div id="valence" class = "donut">
-			<div id="valenceData" class = "text"></div>
-			<div id="valenceDonut"></div>
 		</div>
 
 		<div id="live" class = "donut">
