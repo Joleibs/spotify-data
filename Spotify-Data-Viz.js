@@ -30,7 +30,7 @@ function donutChart1 (id, data, color) {
 	// donut chart arc
 	var arc1 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 50);
+    .innerRadius(radius - 70);
 
 	// generate pie chart and donut chart
 	var pie1 = d3.pie()
@@ -83,7 +83,7 @@ function donutChart2 (id, data, color) {
 	// donut chart arc
 	var arc2 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 50);
+    .innerRadius(radius - 70);
 
 	// generate pie chart and donut chart
 	var pie2 = d3.pie()
@@ -136,7 +136,7 @@ function donutChart3 (id, data, color) {
 	// donut chart arc
 	var arc3 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 50);
+    .innerRadius(radius - 70);
 
 	// generate pie chart and donut chart
 	var pie3 = d3.pie()
@@ -189,7 +189,7 @@ function donutChart4 (id, data, color) {
 	// donut chart arc
 	var arc4 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 50);
+    .innerRadius(radius - 70);
 
 	// generate pie chart and donut chart
 	var pie4 = d3.pie()
@@ -242,7 +242,7 @@ function donutChart5 (id, data, color) {
 	// donut chart arc
 	var arc5 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 50);
+    .innerRadius(radius - 70);
 
 	// generate pie chart and donut chart
 	var pie5 = d3.pie()
@@ -295,7 +295,7 @@ function donutChart6 (id, data, color) {
 	// donut chart arc
 	var arc6 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 50);
+    .innerRadius(radius - 70);
 
 	// generate pie chart and donut chart
 	var pie6 = d3.pie()
@@ -352,6 +352,8 @@ var token = accessToken.substring(accessToken.search("=")+1, accessToken.search(
 
 function visualize () {
   var user_uri = document.getElementById("my_uri").value; 
+  //user_uri substring query? 
+  // var user_uri2 = user_uri.substring(user_uri.search("track")+1, acessToken.search("")-1); 
   console.log(user_uri);
  		$.ajax({
  		url: api + "?ids=" + user_uri,
@@ -360,14 +362,19 @@ function visualize () {
        		},
      		success: function gotData(data) {
 
+     			//Artist Title Query
+     	// 		$.ajax({
+ 					// 	url: "https://api.spotify.com/v1/tracks/?ids=" + user_uri,
+ 					// }
+
       			//----- internal code for JSON Download..
         		// var songData = JSON.stringify(data);
         		// download(songData, 'json.txt', 'text/plain');
 
     
-      			var songData = data;
-      			var hasRun = 1;
-      			console.log(songData);
+      		var songData = data;
+      		var hasRun = 1;
+      		console.log(songData);
       		
      			writeText ("danceData", "Danceability: " + songData.audio_features[0].danceability); 
 					writeText ("acousticData", "Acousticness: " + songData.audio_features[0].acousticness); 
@@ -378,12 +385,12 @@ function visualize () {
 					writeText ("loudData", "Loudness: " + songData.audio_features[0].loudness + " lufs"); 
 					writeText ("tempoData", "Tempo: " + songData.audio_features[0].tempo + " bpm"); 
 
-					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#1dafd3"); 
-					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#ff0000"); 
-					donutChart3 ('#energyDonut', songData.audio_features[0].energy, "#00FF00"); 
-					donutChart4 ('#speechDonut', songData.audio_features[0].speechiness, "#1dafd3"); 
-					donutChart5 ('#liveDonut', songData.audio_features[0].liveness, "#ff0000"); 
-					donutChart6 ('#valenceDonut', songData.audio_features[0].valence, "#00FF00"); 
+					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
+					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#33CC99"); 
+					donutChart3 ('#energyDonut', songData.audio_features[0].energy, "##CC9999"); 
+					donutChart4 ('#speechDonut', songData.audio_features[0].speechiness, "#99CC99"); 
+					donutChart5 ('#liveDonut', songData.audio_features[0].liveness, "##FFCC99"); 
+					donutChart6 ('#valenceDonut', songData.audio_features[0].valence, "#336699"); 
 					// donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
 					// donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
 					// donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
@@ -394,11 +401,12 @@ function visualize () {
 
 document.getElementById('btn1').addEventListener('click', visualize, false);
 
-// if(hasRun = 0) {visualize};
+// no-rerun code
 
-// console.log(token);
+// $('#btn1').click(if(hasRun=0;){visualize};)
 
-//_________________json code
+
+//_________________json download code
 
 function download(content, fileName, contentType) {
     var a = document.createElement("a");
@@ -429,7 +437,6 @@ function download(content, fileName, contentType) {
 //    	}
 // });
 
-// $.post("https://accounts.spotify.com/authorize/?client_id=0bcef9d9b3314325932f6e8e1f4e70f2&response_type=code&redirect_uri=http://localhost:8888/callback/");
 
 // $.ajax(
 //   {
@@ -441,63 +448,8 @@ function download(content, fileName, contentType) {
 //     }
 // });
 
-// window.location = "https://accounts.spotify.com/en/authorize?client_id=0bcef9d9b3314325932f6e8e1f4e70f2&redirect_uri=https://joleibs.github.io/spotify-data/&response_type=token"
-
-
 // var token = location.hash; 
 // console.log(window.accessToken);
-
-// // THIS IS THE GOOD GOOD QUERY ____________
-// $.ajax({
-//  url: "https://api.spotify.com/v1/audio-features/?ids=
-//  headers: {
-//        'Authorization': 'Bearer ' + token
-//        },
-//      success: function gotData(data) {
-//        // var songData = JSON.stringify(data);
-//        var songData = data;
-//        console.log (songData);
-//        console.log (songData.audio_features[0].danceability);
-//        // download(songData, 'json.txt', 'text/plain');
-//          setup();
-//      draw (50, songData.audio_features[0].danceability*100);
-//      }
-// });
-
-// 0b9oOr2ZgvyQu88wzixux9,7dt6x5M1jzdTEt8oCbisTK,7ef4DlsgrMEH11cDZd32M6,1cTZMwcBJT0Ka3UJPXOeeN,2XW4DbS6NddZxRPm5rMCeY,5SxkdsY1ufZzoq9iXceLw9,3swc6WTsr7rl9DqQKQA55C,39N9RPD9MRb5WmoLzNzPeA,08bNPGLD8AhKpnnERrAc6G,58q2HKrzhC3ozto2nDdN4z,3V8UKqhEK5zBkBb6d6ub8i,0e7ipj03S05BNilyu5bRzt,2ARqIya5NAuvFVHSN3bL0m,10Igtw8bSDyyFs7KIsKngZ,3fpVWegR6YOS1Yk5HSMYIq,45Egmo7icyopuzJN0oMEdk,4qKcDkK6siZ7Jp1Jb4m0aL,1gm616Plq4ScqNi7TVkZ5N,76cy1WJvNGJTj78UqeA5zr,5CLGzJsGqhCEECcpnFQA8x,63SevszngYpZOwf63o61K4,4hQ6UGyWQIGJmHSo0J88JW,6jA8JUuPCGYjFcgw0AoM5T,33IOhptvC2Qoy2UhjiHXLV,3ee8Jmje8o58CHK66QrVC2,5VuxWXbt7XENQCtE9TzpTv,4H7WNRErSbONkM06blBoGc,6Hgh47WXVKtXN5zGOu0hjI,6xTU6B6nFwKKTSZ9ySXS80,79jX8RM5CgPqDKdGEKNW9K,1rfofaqEpACxVEHIZBJe6W,7iDa6hUg2VgEL1o1HjmfBn,3GCdLUSnKSMJhs4Tj6CV3s,2VdT56BGpdqNHUgOe1j5vc,3Wf2YGdYT8xVdNsQSoRKk9,6IaieqiCVvsNvEt6Y7yOFa,7uzmGiiJyRfuViKKK3lVmR,6n4U3TlzUGhdSFbUUhTvLP,6mAz8D1TmlTuef90dbNIiZ,4QtiVmuA88tPQiCOHZuQ5b,2j2fIJGh4PMdXt9ULI5Tlc,43cFjTTCD9Cni4aSL0sORz,3DoBTwfr8yi2LN08SBpFkN,32lItqlMi4LBhb4k0BaSaC,55S2PQgSMYAhgoTCcGCDfw,7yotKA30dwTKNEGomV9ZsI,6RnkFd8Fqqgk1Uni8RgqCQ,7qiZfU4dY1lWllzX7mPBI3,09IOPhEh1OMe0HD9b36FJk,5Z5nbOXhsSbySVC7WUc6y9"
-
-//new JSON script - Track INFO
-
-// var songData;
-
-// //  https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy
-
-// $.ajax(
-//    url: 'https://api.spotify.com/v1/audio-features/06AKEBrKUckW0KREUWRnvT',
-//    headers: {
-//        'Authorization': 'Bearer ' + 'BQB3TmMYHORtucm8dlXfXYT0i5oDhzKxUYMrgKET4_uiYNsXfyOR_ef_XtBnPEK01ysihFhtk1RTMvFCdFQ3Xu2ge6HibtaVvKbZ4Ll2Taa7fvtUyr8NP2sm4F1GL8TZwvwqNhD2Vv6a0bQ'
-//        },
-//    success: gotData(data) {
-//        printLn(data);
-//        }
-    
-// );
-
-
-
-// <script src="//code.jquery.com/jquery-1.11.1.min.js"> </script>
-
-//OG API JSON SCRIPT - AUDIO FEATURES
-
-// var songData;
-
-// function download(content, fileName, contentType) {
-//     var a = document.createElement("a");
-//     var file = new Blob([content], {type: contentType});
-//     a.href = URL.createObjectURL(file);
-//     a.download = fileName;
-//     a.click();
-// }
 
 
 

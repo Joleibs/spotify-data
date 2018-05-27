@@ -11,45 +11,63 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
+	<header>
 	<div class="header">
 		  <h1> Spotify Track Analyzer </h1>
-		  <p class="pa"> 1. Search for any song on Spotify. <br> 2. Copy and paste the URI Code below. <br> 3. Press visualize. </p>
+		  <p class="pa1"> 1. Search for any song on Spotify. </p>
+		  <p class="pa2"> 2. Click the <img class="inline" height="18px" width="30px" src="pics/hamburger.png"> and 'Copy URI Code'. </p>
+		  <p class="pa3"> 3. Paste below and press visualize. </p>
 	</div>
+	</header>
 
 	<form id = "form">
 		<input id ="my_uri" type="text"> </input>
 		<button id = "btn1" type = "submit"> Visualize </button>
 	</form>
 
-	<div class="pa" id="loudData"></div>
-	<div class="pa" id="tempoData"></div>
-	<div id="keyData"></div>
+	<div class="top3">
+		<div class="pa" id="loudData"> </div>
+		<div class="pa" id="tempoData"></div>
+		<div id="keyData"></div>
+	</div>
 
 	<div id="dance" class = "donut">
 		<div id="danceData" class = "text"></div>
 		<div id="danceDonut"></div>
 	</div>
+
 	<div id="acoustic" class = "donut">
 		<div id="acousticData" class = "text"></div>
 		<div id="acousticDonut"></div>	
 	</div>
+
 	<div id="energy" class = "donut">
 		<div id="energyData" class = "text"></div>
 		<div id="energyDonut"></div>
 	</div>
+
 	<div id="speech" class = "donut">
 		<div id="speechData" class = "text"></div>
 		<div id="speechDonut"></div>
 	</div>
+
 	<div id="speech" class = "donut">
 		<div id = "liveData" class = "text"> </div>
 		<div id="liveDonut"></div>
 	</div>
+
 	<div id="valence" class = "donut">
 		<div id="valenceData" class = "text"></div>
 		<div id="valenceDonut"></div>
 	</div>
 
+	<footer>
+	<div class="footer">
+			<p> Created by Josh Leibsohn</p>
+			<link href="www.google.com"> Connect with me. </link><br>
+			<link href="www.google.com"> Listen to my music. </link>
+	</div>
+	</footer>
 
 <script class = "sketch" src="Spotify-Data-Viz.js"></script>
 <!-- <script src="charts.js"></script> -->
