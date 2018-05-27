@@ -378,8 +378,8 @@ function visualize () {
     		
    			writeText ("danceData", "Danceability: " + songData.audio_features[0].danceability); 
 				writeText ("acousticData", "Acousticness: " + songData.audio_features[0].acousticness); 
-				// writeText ("energyData", "Energy: " + songData.audio_features[0].energy); 
-				// writeText ("speechData", "Speechiness: " + songData.audio_features[0].speechiness); 
+				writeText ("energyData", "Energy: " + songData.audio_features[0].energy); 
+				writeText ("speechData", "Speechiness: " + songData.audio_features[0].speechiness); 
 				// writeText ("liveData", "Liveness: " + songData.audio_features[0].liveness); 
 				// writeText ("valenceData", "Valence: " + songData.audio_features[0].valence); 
 				// writeText ("loudData", "Loudness: " + songData.audio_features[0].loudness + " lufs"); 
