@@ -382,10 +382,10 @@ function visualize () {
 					writeText ("speechData", "Speechiness: " + songData.audio_features[0].speechiness); 
 					writeText ("liveData", "Liveness: " + songData.audio_features[0].liveness); 
 					writeText ("valenceData", "Valence: " + songData.audio_features[0].valence); 
-					writeText ("loudData", "loudness: " + songData.audio_features[0].loudness + " lufs"); 
+					writeText ("loudData", "Loudness: " + songData.audio_features[0].loudness + " lufs"); 
 					writeText ("tempoData", "Tempo: " + songData.audio_features[0].tempo + " bpm"); 
-					writeText ("keyData", "key:" + songData.audio_features[0].key); 
-
+					writeText ("keyData", "Key:" + songData.audio_features[0].key); 
+-
 					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
 					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#33CC99"); 
 					donutChart3 ('#energyDonut', songData.audio_features[0].energy, "#CC9999"); 
@@ -395,7 +395,6 @@ function visualize () {
 					// donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
 					// donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
 					// donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
-
      			}
 		});
 };
