@@ -29,7 +29,7 @@ function donutChart1 (id, data, color) {
 
 	// donut chart arc
 	var arc1 = d3.arc()
-    .outerRadius(radius);
+    .outerRadius(radius)
     .innerRadius(radius - 80);
 
 	// generate pie chart and donut chart
