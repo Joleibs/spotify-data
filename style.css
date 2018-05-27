@@ -41,7 +41,6 @@ h1 {
 	color: #FFCC99;
 }
 
-
 #btn1 {
 	display: block;
 	margin: 0 auto;
@@ -71,6 +70,7 @@ h1 {
 
 .charts {
 	width: 600px;
+	margin: 0 auto;
 }
 
 .donut {
