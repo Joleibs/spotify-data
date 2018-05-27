@@ -29,8 +29,8 @@ function donutChart1 (id, data, color) {
 
 	// donut chart arc
 	var arc1 = d3.arc()
-    .outerRadius(radius)
-    .innerRadius(radius - 80);
+    .outerRadius(radius - 10)
+    .innerRadius(radius - 40);
 
 	// generate pie chart and donut chart
 	var pie1 = d3.pie()
@@ -83,7 +83,7 @@ function donutChart2 (id, data, color) {
 	// donut chart arc
 	var arc2 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 100);
+    .innerRadius(radius - 40);
 
 	// generate pie chart and donut chart
 	var pie2 = d3.pie()
@@ -136,7 +136,7 @@ function donutChart3 (id, data, color) {
 	// donut chart arc
 	var arc3 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 70);
+    .innerRadius(radius - 40);
 
 	// generate pie chart and donut chart
 	var pie3 = d3.pie()
@@ -189,7 +189,7 @@ function donutChart4 (id, data, color) {
 	// donut chart arc
 	var arc4 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 70);
+    .innerRadius(radius - 40);
 
 	// generate pie chart and donut chart
 	var pie4 = d3.pie()
@@ -242,7 +242,7 @@ function donutChart5 (id, data, color) {
 	// donut chart arc
 	var arc5 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 70);
+    .innerRadius(radius - 40);
 
 	// generate pie chart and donut chart
 	var pie5 = d3.pie()
@@ -295,7 +295,7 @@ function donutChart6 (id, data, color) {
 	// donut chart arc
 	var arc6 = d3.arc()
     .outerRadius(radius - 10)
-    .innerRadius(radius - 70);
+    .innerRadius(radius - 40);
 
 	// generate pie chart and donut chart
 	var pie6 = d3.pie()
@@ -382,8 +382,9 @@ function visualize () {
 					writeText ("speechData", "Speechiness: " + songData.audio_features[0].speechiness); 
 					writeText ("liveData", "Liveness: " + songData.audio_features[0].liveness); 
 					writeText ("valenceData", "Valence: " + songData.audio_features[0].valence); 
-					writeText ("loudData", "Loudness: " + songData.audio_features[0].loudness + " lufs"); 
-					writeText ("tempoData", "Tempo: " + songData.audio_features[0].tempo + " bpm"); 
+					writeText ("loudData", songData.audio_features[0].loudness + " lufs"); 
+					writeText ("tempoData", songData.audio_features[0].tempo + " bpm"); 
+					writeText ("keyData", "key:" + songData.audio_features[0].key); 
 
 					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
 					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#33CC99"); 

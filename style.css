@@ -14,9 +14,11 @@ h1 {
 }
 
 .inline {
-	display: inline;
+	display: inline-block;
 	border: 1px solid white;
 	vertical-align: middle;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 .pa1 {
 	font-size: 12px;
