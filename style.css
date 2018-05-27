@@ -1,12 +1,33 @@
 body {
-	font-color: white;
-	background-color: rgb(200, 200, 200);
+	background-color: rgb(50, 50, 50);
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
+	color: rgb(255, 255, 255);
 }
+
 
 h1 {
 	margin: 0 auto;
+	font-size: 40px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+p {
+	font-size: 12px;
+	margin: 20px;
+}
+
+#btn1 {
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#my_uri {
+	padding-left: 60px;
+	padding-right: 60px;
+}
 
 }
 
