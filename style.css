@@ -46,6 +46,27 @@ h1 {
 	color: #FFCC99;
 }
 
+.top1 {
+	display: inline-block;
+	margin-left: 40px;
+	margin-right: 40px;
+	color: #99CC99;
+}
+
+.top2 {
+	display: inline-block;
+	margin-left: 40px;
+	margin-right: 40px;
+	color: #CC9999;
+}
+
+.top3 {
+	display: inline-block;
+	margin-left: 40px;
+	margin-right: 40px;
+	color: #99CC99;
+}
+
 #btn1 {
 	display: block;
 	margin: 0 auto;
