@@ -29,8 +29,8 @@ function donutChart1 (id, data, color) {
 
 	// donut chart arc
 	var arc1 = d3.arc()
-    .outerRadius(radius - 10)
-    .innerRadius(radius - 40);
+    .outerRadius(radius - 20)
+    .innerRadius(radius - 50);
 
 	// generate pie chart and donut chart
 	var pie1 = d3.pie()
@@ -82,8 +82,8 @@ function donutChart2 (id, data, color) {
 
 	// donut chart arc
 	var arc2 = d3.arc()
-    .outerRadius(radius - 10)
-    .innerRadius(radius - 40);
+    .outerRadius(radius - 20)
+    .innerRadius(radius - 50);
 
 	// generate pie chart and donut chart
 	var pie2 = d3.pie()
@@ -135,8 +135,8 @@ function donutChart3 (id, data, color) {
 
 	// donut chart arc
 	var arc3 = d3.arc()
-    .outerRadius(radius - 10)
-    .innerRadius(radius - 40);
+    .outerRadius(radius - 20)
+    .innerRadius(radius - 50);
 
 	// generate pie chart and donut chart
 	var pie3 = d3.pie()
@@ -188,8 +188,8 @@ function donutChart4 (id, data, color) {
 
 	// donut chart arc
 	var arc4 = d3.arc()
-    .outerRadius(radius - 10)
-    .innerRadius(radius - 40);
+    .outerRadius(radius - 20)
+    .innerRadius(radius - 50);
 
 	// generate pie chart and donut chart
 	var pie4 = d3.pie()
@@ -241,8 +241,8 @@ function donutChart5 (id, data, color) {
 
 	// donut chart arc
 	var arc5 = d3.arc()
-    .outerRadius(radius - 10)
-    .innerRadius(radius - 40);
+    .outerRadius(radius - 20)
+    .innerRadius(radius - 50);
 
 	// generate pie chart and donut chart
 	var pie5 = d3.pie()
@@ -294,8 +294,8 @@ function donutChart6 (id, data, color) {
 
 	// donut chart arc
 	var arc6 = d3.arc()
-    .outerRadius(radius - 10)
-    .innerRadius(radius - 40);
+    .outerRadius(radius - 20)
+    .innerRadius(radius - 50);
 
 	// generate pie chart and donut chart
 	var pie6 = d3.pie()
@@ -388,9 +388,9 @@ function visualize () {
 
 					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
 					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#33CC99"); 
-					donutChart3 ('#energyDonut', songData.audio_features[0].energy, "##CC9999"); 
+					donutChart3 ('#energyDonut', songData.audio_features[0].energy, "#CC9999"); 
 					donutChart4 ('#speechDonut', songData.audio_features[0].speechiness, "#99CC99"); 
-					donutChart5 ('#liveDonut', songData.audio_features[0].liveness, "##FFCC99"); 
+					donutChart5 ('#liveDonut', songData.audio_features[0].liveness, "#FFCC99"); 
 					donutChart6 ('#valenceDonut', songData.audio_features[0].valence, "#336699"); 
 					// donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
 					// donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
