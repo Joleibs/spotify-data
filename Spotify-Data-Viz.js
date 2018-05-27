@@ -358,44 +358,44 @@ function visualize () {
  		$.ajax({
  		url: api + "?ids=" + user_uri,
  		headers: {
-       		'Authorization': 'Bearer ' + token
-       		},
-     		success: function gotData(data) {
+     		'Authorization': 'Bearer ' + token
+     		},
+   		success: function gotData(data) {
 
-     			//Artist Title Query
-     	// 		$.ajax({
- 					// 	url: "https://api.spotify.com/v1/tracks/?ids=" + user_uri,
- 					// }
+   			//Artist Title Query
+   	// 		$.ajax({
+					// 	url: "https://api.spotify.com/v1/tracks/?ids=" + user_uri,
+					// }
 
-      			//----- internal code for JSON Download..
-        		// var songData = JSON.stringify(data);
-        		// download(songData, 'json.txt', 'text/plain');
+    			//----- internal code for JSON Download..
+      		// var songData = JSON.stringify(data);
+      		// download(songData, 'json.txt', 'text/plain');
 
-    
-      		var songData = data;
-      		var hasRun = 1;
-      		console.log(songData);
-      		
-     			writeText ("danceData", "Danceability: " + songData.audio_features[0].danceability); 
-					writeText ("acousticData", "Acousticness: " + songData.audio_features[0].acousticness); 
-					writeText ("energyData", "Energy: " + songData.audio_features[0].energy); 
-					writeText ("speechData", "Speechiness: " + songData.audio_features[0].speechiness); 
-					writeText ("liveData", "Liveness: " + songData.audio_features[0].liveness); 
-					writeText ("valenceData", "Valence: " + songData.audio_features[0].valence); 
-					writeText ("loudData", "Loudness: " + songData.audio_features[0].loudness + " lufs"); 
-					writeText ("tempoData", "Tempo: " + songData.audio_features[0].tempo + " bpm"); 
-					writeText ("keyData", "Key:" + songData.audio_features[0].key); 
--
-					donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
-					donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#33CC99"); 
-					donutChart3 ('#energyDonut', songData.audio_features[0].energy, "#CC9999"); 
-					donutChart4 ('#speechDonut', songData.audio_features[0].speechiness, "#99CC99"); 
-					donutChart5 ('#liveDonut', songData.audio_features[0].liveness, "#FFCC99"); 
-					donutChart6 ('#valenceDonut', songData.audio_features[0].valence, "#336699"); 
-					// donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
-					// donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
-					// donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
-     			}
+  
+    		var songData = data;
+    		var hasRun = 1;
+    		console.log(songData);
+    		
+   			writeText ("danceData", "Danceability: " + songData.audio_features[0].danceability); 
+				writeText ("acousticData", "Acousticness: " + songData.audio_features[0].acousticness); 
+				writeText ("energyData", "Energy: " + songData.audio_features[0].energy); 
+				writeText ("speechData", "Speechiness: " + songData.audio_features[0].speechiness); 
+				writeText ("liveData", "Liveness: " + songData.audio_features[0].liveness); 
+				writeText ("valenceData", "Valence: " + songData.audio_features[0].valence); 
+				writeText ("loudData", "Loudness: " + songData.audio_features[0].loudness + " lufs"); 
+				writeText ("tempoData", "Tempo: " + songData.audio_features[0].tempo + " bpm"); 
+				writeText ("keyData", "Key:" + songData.audio_features[0].key); 
+				
+				donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
+				donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#33CC99"); 
+				donutChart3 ('#energyDonut', songData.audio_features[0].energy, "#CC9999"); 
+				donutChart4 ('#speechDonut', songData.audio_features[0].speechiness, "#99CC99"); 
+				donutChart5 ('#liveDonut', songData.audio_features[0].liveness, "#FFCC99"); 
+				donutChart6 ('#valenceDonut', songData.audio_features[0].valence, "#336699"); 
+				// donutChart ('#valenceDonut', songData.audio_features[0].valence, "#1dafd3"); 
+				// donutChart ('#loudDonut', songData.audio_features[0].loudness, "#1dafd3"); 
+				// donutChart ('#tempoDonut', songData.audio_features[0].tempo, "#1dafd3"); 
+   			}
 		});
 };
 
