@@ -58,18 +58,18 @@ h1 {
 }
 
 .top1 {
-	display: inline-block;
+/*	display: inline-block;*/
 	margin-right: 40px;
 	color: #99CC99;
 }
 
 .top2 {
-	display: inline-block;
+/*	display: inline-block;*/
 	color: #CC9999;
 }
 
 .top3 {
-	display: inline-block;
+/*	display: inline-block;*/
 	margin-left: 40px;
 	color: #FFCC99;
 }
