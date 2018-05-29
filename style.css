@@ -13,6 +13,13 @@ h1 {
 	margin-bottom: 20px;
 }
 
+h2 {
+	margin: 0 auto;
+	font-size: 30px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
 #form {
 	margin: 0 auto;
 }
@@ -75,7 +82,8 @@ h1 {
 }
 
 .top {
-	margin-top: 40px;
+	padding-top: 40px;
+	margin: 0 auto;
 	text-align: center;
 	width: 600px;
 	font-size: 12px;
