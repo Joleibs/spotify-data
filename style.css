@@ -78,6 +78,10 @@ h1 {
 	color: #99CC99;
 }
 
+.top {
+	margin-top: 40px;
+}
+
 .footer {
 	font-size: 12px;
     bottom: 0;
