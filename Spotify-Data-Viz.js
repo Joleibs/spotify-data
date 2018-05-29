@@ -382,8 +382,8 @@ function visualize () {
 				writeText ("speechData", "Speechiness: " + songData.audio_features[0].speechiness); 
 				writeText ("liveData", "Liveness: " + songData.audio_features[0].liveness); 
 				writeText ("valenceData", "Valence: " + songData.audio_features[0].valence); 
-				writeText ("loudData", "Loudness: " + songData.audio_features[0].loudness + " lufs"); 
-				writeText ("tempoData", "Tempo: " + songData.audio_features[0].tempo + " bpm"); 
+				writeText ("loudData", songData.audio_features[0].loudness + " lufs"); 
+				writeText ("tempoData", songData.audio_features[0].tempo + " bpm"); 
 				writeText ("keyData", "Key: " + songData.audio_features[0].key); 
 
 				donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
