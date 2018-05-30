@@ -369,9 +369,9 @@ function visualize () {
      						'Authorization': 'Bearer ' + token
      				},
    						success: function gotData(data) {
-   								var trackData = data
-   								var artistName = trackData.artists[0];
-   								var songName = trackData.name;
+   								// var trackData = data
+   								// var artistName = trackData.artists[0];
+   								// var songName = trackData.name;
    								console.log("I ran");
    								console.log(trackData.artists[0]);
    								console.log(trackData.name);
@@ -401,8 +401,8 @@ function visualize () {
 
 				//artist & song name
 
-				writeText ("artist", artistName); 
-				writeText ("song", songName); 
+				// writeText ("artist", artistName); 
+				// writeText ("song", songName); 
 
 				donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
 				donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#33CC99"); 
