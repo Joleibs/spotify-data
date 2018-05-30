@@ -13,7 +13,7 @@ h1 {
 	margin-bottom: 20px;
 }
 
-h2 {
+#artist, #song {
 	margin: 0 auto;
 	font-size: 30px;
 	margin-top: 40px;

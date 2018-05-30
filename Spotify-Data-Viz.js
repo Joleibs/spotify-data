@@ -363,18 +363,31 @@ function visualize () {
    		success: function gotData(data) {
 
    			//Artist Title Query
-   	// 		$.ajax({
-					// 	url: "https://api.spotify.com/v1/tracks/?ids=" + user_uri,
-					// }
+   			$.ajax({
+						url: "https://api.spotify.com/v1/tracks/?ids=" + user_uri,
+						headers: {
+     						'Authorization': 'Bearer ' + token
+     				},
+   						success: function gotData(data) {
+   								var trackData = data
+   								var artistName = trackData.artists[0];
+   								var songName = trackData.name;
+   								console.log("I ran");
+   								console.log(trackData.artists[0]);
+   								console.log(trackData.name);
+   						}
+					}
 
-    			//----- internal code for JSON Download..
-      		// var songData = JSON.stringify(data);
-      		// download(songData, 'json.txt', 'text/plain');
+    			// ----- internal code for JSON Download..
+      	// 	var songData = JSON.stringify(data);
+      	// 	download(songData, 'json.txt', 'text/plain');
 
   
     		var songData = data;
     		var hasRun = 1;
     		console.log(songData);
+
+    		//donut labels
     		
    			writeText ("danceData", "Danceability: " + songData.audio_features[0].danceability); 
 				writeText ("acousticData", "Acousticness: " + songData.audio_features[0].acousticness); 
@@ -385,6 +398,11 @@ function visualize () {
 				writeText ("loudData", songData.audio_features[0].loudness + " lufs"); 
 				writeText ("tempoData", songData.audio_features[0].tempo + " bpm"); 
 				writeText ("keyData", "Key: " + songData.audio_features[0].key); 
+
+				//artist & song name
+
+				writeText ("artist", artistName); 
+				writeText ("song", songName); 
 
 				donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
 				donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#33CC99"); 
