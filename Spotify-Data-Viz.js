@@ -348,15 +348,18 @@ var accessToken = location.hash;
 
 var token = accessToken.substring(accessToken.search("=")+1, accessToken.search("&"));
 
+
 //_________________FEATURES QUERY
 
 function visualize () {
   var user_uri = document.getElementById("my_uri").value; 
+  var user_uri2 = user_uri.substring(user_uri.search("track:")+1)
+  console.log(user_uri2);
   //user_uri substring query? 
   // var user_uri2 = user_uri.substring(user_uri.search("track")+1, acessToken.search("")-1); 
   console.log(user_uri);
  		$.ajax({
- 		url: api + "?ids=" + user_uri,
+ 		url: api + "?ids=" + user_uri2,
  		headers: {
      		'Authorization': 'Bearer ' + token
      		},
@@ -364,7 +367,7 @@ function visualize () {
 
    			//Artist Title Query
    			$.ajax({
-						url: "https://api.spotify.com/v1/tracks/?ids=" + user_uri,
+						url: "https://api.spotify.com/v1/tracks/?ids=" + user_uri2,
 						headers: {
      						'Authorization': 'Bearer ' + token
      				},
