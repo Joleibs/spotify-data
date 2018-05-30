@@ -423,7 +423,7 @@ function visualize () {
 		});
 };
 
-document.getElementById('btn1').addEventListener('click', if (hasRun=0) {visualize};, false);
+document.getElementById('btn1').addEventListener('click', visualize, false);
 
 // no-rerun code
 
