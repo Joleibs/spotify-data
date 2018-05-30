@@ -369,7 +369,7 @@ function visualize () {
      						'Authorization': 'Bearer ' + token
      				},
    						success: function gotData(data) {
-   								// var trackData = data
+   								var trackData = data
    								var artistName = trackData.tracks[0].artists[0].name;
    								var songName = trackData.tracks[0].name;
    								console.log("I ran");
@@ -388,7 +388,7 @@ function visualize () {
   
     		var songData = data;
     		var hasRun = 1;
-    		console.log(songData);
+    		// console.log(songData);
 
     		//donut labels
     		
