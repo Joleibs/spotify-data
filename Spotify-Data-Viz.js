@@ -370,10 +370,12 @@ function visualize () {
      				},
    						success: function gotData(data) {
    								// var trackData = data
-   								// var artistName = trackData.album.artists[0].name;
-   								// var songName = trackData.name;
+   								var artistName = trackData.tracks[0].artists[0].name;
+   								var songName = trackData.tracks[0].name;
    								console.log("I ran");
    								console.log(data);
+   								console.log(artistName);
+   								console.log(songName);
    								// console.log(trackData.album.artists[0].name);
    								// console.log(trackData.name);
    						}
