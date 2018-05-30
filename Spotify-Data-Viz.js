@@ -378,6 +378,9 @@ function visualize () {
    								console.log(songName);
    								// console.log(trackData.album.artists[0].name);
    								// console.log(trackData.name);
+
+   								writeText ("artist", artistName); 
+									writeText ("song", songName); 
    						}
 					});
 
@@ -403,9 +406,6 @@ function visualize () {
 				writeText ("keyData", "Key: " + songData.audio_features[0].key); 
 
 				//artist & song name
-
-				writeText ("artist", artistName); 
-				writeText ("song", songName); 
 
 				donutChart1 ('#danceDonut', songData.audio_features[0].danceability, "#009999"); 
 				donutChart2 ('#acousticDonut', songData.audio_features[0].acousticness, "#33CC99"); 
