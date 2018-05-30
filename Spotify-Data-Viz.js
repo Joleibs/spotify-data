@@ -353,11 +353,11 @@ var token = accessToken.substring(accessToken.search("=")+1, accessToken.search(
 
 function visualize () {
   var user_uri = document.getElementById("my_uri").value; 
-  var user_uri2 = user_uri.substring(user_uri.search("track:")+1)
+  var user_uri2 = user_uri.substring(user_uri.search("track:")+6)
+  console.log(user_uri);
   console.log(user_uri2);
   //user_uri substring query? 
   // var user_uri2 = user_uri.substring(user_uri.search("track")+1, acessToken.search("")-1); 
-  console.log(user_uri);
  		$.ajax({
  		url: api + "?ids=" + user_uri2,
  		headers: {
