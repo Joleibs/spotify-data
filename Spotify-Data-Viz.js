@@ -376,7 +376,7 @@ function visualize () {
    								console.log(trackData.artists[0]);
    								console.log(trackData.name);
    						}
-					}
+					});
 
     			// ----- internal code for JSON Download..
       	// 	var songData = JSON.stringify(data);
